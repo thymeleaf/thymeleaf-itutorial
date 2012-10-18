@@ -25,6 +25,7 @@ This software is licensed under the [Apache License 2.0]
 Requirements
 ------------
 
+  * A Java web server (Apache Tomcat 7.0+ recommended).
   * A Browser.
   * A text editor for editing files in `WEB-INF/templates`, directly on the webapps folder of 
     your web server, while it is running. Preferably, pick an editor with Java & HTML syntax
