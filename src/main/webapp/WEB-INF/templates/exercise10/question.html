@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial: exercise 10</title>
+        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Thymeleaf tutorial - Exercise 10: Spring expression language</h1>
+        <p>
+            This exercise introduces concepts from
+            <a href="http://static.springsource.org/spring/docs/3.1.x/spring-framework-reference/html/expressions.html">Spring expression language</a>
+        </p>
+        <ol>
+            <li>
+                Open the <a href="../../templates/exercise10/answer.html" 
+                  th:href="@{/resources/templates/exercise10/answer.html}"><kbd>WEB-INF/templates/exercise10/answer.html</kbd></a> template file with your code editor.
+            </li>
+            <li>
+                Modify the template using Spring Expression Language to fill in the four required values.
+            </li>
+            <li>
+                Check your answer: 
+                <a href="answer.html" th:href="@{/templates/exercise10/answer.html}">Execute it</a> |
+                <a href="answer.html" th:href="@{/static/templates/exercise10/answer.html}">See it statically</a>.  
+            </li>
+            <li>
+                Finally, you can compare your answer with our proposed solution:
+                <a href="solution.html" th:href="@{/templates/exercise10/solution.html}">Execute it</a> |
+                <a href="solution.html" th:href="@{/resources/templates/exercise10/solution.html}">See the code</a> |
+                <a href="solution.html" th:href="@{/static/templates/exercise10/solution.html}">See it statically</a>.
+            </li>
+        </ol>
+        <a href="../index.html" th:href="@{/}" class="back">Back to index</a>
+        <a href="../exercise11/question.html" th:href="@{/templates/exercise11/question.html}" class="next">Next exercise</a>
+    </body>
+</html>

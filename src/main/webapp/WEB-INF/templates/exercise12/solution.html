@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial: exercise 12</title>
+        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Thymeleaf tutorial - Solution for exercise 12: forms</h1>
+        <h2>Customer edition</h2>
+        <form action="saveCustomer.html" th:action="@{/templates/exercise12/saveCustomer.html}" th:object="${customer}" method="post">
+            <input type="hidden" th:field="*{id}" />
+            
+            <label for="firstName">First name:</label>
+            <input type="text" th:field="*{firstName}" value="John" />
+            
+            <label for="lastName">Last name:</label>
+            <input type="text" th:field="*{lastName}" value="Wayne" />
+            
+            Genre:
+            <div th:each="gender : ${genders}" class="radio">
+                <input type="radio" th:value="${gender}" th:field="*{gender}" />
+                <label th:for="${#ids.prev('gender')}" th:text="${gender.description}">Male</label>
+            </div>
+            <div th:remove="all" class="radio">
+                <input type="radio" />
+                <label>Female</label>
+            </div>
+            
+            <label for="paymentMethod">Payment method:</label>
+            <select th:field="*{paymentMethod}" th:remove="all-but-first">
+                <option th:each="paymentMethod : ${paymentMethods}"
+                        th:value="${paymentMethod}" th:text="${paymentMethod.description}">Credit card</option>
+                <option>Another payment method</option>
+                <option>Another payment method</option>
+            </select>
+            
+            <label for="balance">Balance (dollars):</label>
+            <input type="text" th:field="*{balance}" size="10" value="2500" />
+            
+            <input type="submit" />
+        </form>
+        <a href="javascript:history.back()" class="back">Back</a>
+    </body>
+</html>

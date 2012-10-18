@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial: exercise 13</title>
+        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Thymeleaf tutorial - Answer for exercise 13: inlining</h1>
+        <h2>Birthday email</h2>
+        <form action="#" method="post">
+            <label for="body">Message body:</label>
+<textarea id="body" name="body">
+Dear Peter,
+
+it is our sincere pleasure to congratulate your in your birthday:
+    Happy birthday Peter!!!
+
+See you soon, Peter.
+
+Regards,
+    The Thymeleaf team
+</textarea>
+            <input type="submit" value="Send mail" />
+        </form>
+        <a href="javascript:history.back()" class="back">Back</a>
+    </body>
+</html>

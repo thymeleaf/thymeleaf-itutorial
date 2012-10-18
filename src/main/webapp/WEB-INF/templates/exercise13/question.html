@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial: exercise 13</title>
+        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Thymeleaf tutorial - Exercise 13: inlining</h1>
+        <p>This exercise introduces concepts from chapter 11 of the <i><a href="../../../doc/Tutorial - Using Thymeleaf 20121017.pdf" 
+				   th:href="@{'/doc/Tutorial - Using Thymeleaf 20121017.pdf'}">Using Thymeleaf</a></i> manual</p>
+        <ol>
+            <li>
+                Open the <a href="../../templates/exercise13/answer.html" 
+                  th:href="@{/resources/templates/exercise13/answer.html}"><kbd>WEB-INF/templates/exercise13/answer.html</kbd></a> template file with your code editor.
+            </li>
+            <li>
+			    There is a <kbd>String</kbd> variable with name <b>customerName</b> in the context
+				model that we want to display instead of the text <i>Peter</i>. Substitute it
+				using Thymeleaf's <i>text inlining</i>.
+            </li>
+            <li>
+                Check your answer: 
+                <a href="answer.html" th:href="@{/templates/exercise13/answer.html}">Execute it</a> |
+                <a href="answer.html" th:href="@{/static/templates/exercise13/answer.html}">See it statically</a>. 
+            </li>
+            <li>
+                Finally, you can compare your answer with our proposed solution:
+                <a href="solution.html" th:href="@{/templates/exercise13/solution.html}">Execute it</a> |
+                <a href="solution.html" th:href="@{/resources/templates/exercise13/solution.html}">See the code</a> |
+                <a href="solution.html" th:href="@{/static/templates/exercise13/solution.html}">See it statically</a>.
+            </li>
+        </ol>
+        <a href="../index.html" th:href="@{/}" class="back">Back to index</a>
+        <a href="../exercise14/question.html" th:href="@{/templates/exercise14/question.html}" class="next">Next exercise</a>
+    </body>
+</html>

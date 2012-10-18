@@ -68,7 +68,7 @@
     </developers>
   
 
-    <repositories>
+    <distributionManagement>
       <snapshotRepository>
         <id>sonatype-nexus-snapshots</id>
         <name>Sonatype Nexus Snapshots</name>
@@ -79,11 +79,22 @@
         <name>Sonatype Nexus Snapshots</name>
         <url>http://oss.sonatype.org/service/local/staging/deploy/maven2</url>
       </repository>
+    </distributionManagement>
+
+    <repositories>
+      <repository>
+        <id>sonatype-nexus-snapshots</id>
+        <name>Sonatype Nexus Snapshots</name>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <snapshots>
+          <enabled>true</enabled>
+        </snapshots>
+      </repository>
     </repositories>
 
 
     <properties>
-        <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springframework.version>3.1.2.RELEASE</springframework.version>
         <thymeleaf.version>2.0.14</thymeleaf.version>
         <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
@@ -107,7 +118,7 @@
                 </includes>
             </resource>
             <resource>
-                <directory>src/main/java/thymeleafexamples/tutorial/beans</directory>
+                <directory>src/main/java/org/thymeleaf/itutorial/beans</directory>
                 <targetPath>${project.build.directory}/${project.build.finalName}/WEB-INF/code/</targetPath>
                 <includes>
                     <include>**/*.java</include>

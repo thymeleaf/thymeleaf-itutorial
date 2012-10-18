@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial: exercise 5</title>
+        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Thymeleaf tutorial - Solution for exercise 5: escaped and unescaped text</h1>
+        <div th:text="${html}">
+            Some escaped text
+        </div>
+        <div th:utext="${html}">
+            Some unescaped text
+        </div>
+        <a href="javascript:history.back()" class="back">Back</a>
+    </body>
+</html>

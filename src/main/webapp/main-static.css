@@ -1,0 +1,158 @@
+body {
+    font-family: 'Trebuchet Ms', Verdana, Arial, sans-serif;
+    padding: 1em 4em 4em 4em;
+    background-color: #d0d0d0;
+    color: #000000;
+}
+
+h1, h2, h3 {
+    padding: 0.2em;
+    background-color: #cce699;
+    border-bottom: solid 4px #5c7a1f;
+}
+
+h1 {
+    font-size: 1.6em;
+}
+
+h2 {
+    font-size: 1.3em;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+h3.footer {
+    text-align: right;
+}
+
+a {
+    color: #5c7a1f;
+}
+
+ul {
+    list-style-image: url('bullet.png');
+}
+
+a.back, a.next {
+    display: inline-block;
+    margin-top: 2em;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    border: solid 1px #5c7a1f;
+    border-radius: 8px;
+}
+
+a.back {
+    background-image: url('back.png');
+    background-position: 2% center;
+    padding: 4px 6px 4px 20px;
+}
+
+a.next {
+    background-image: url('forward.png');
+    background-position: 98% center;
+    padding: 4px 20px 4px 6px;
+}
+
+a.back:hover, a.next:hover {
+    background-color: #e0f0c2;
+}
+
+div.code {
+    font-family: monospace;
+}
+
+table {
+    border: solid 1px #5c7a1f;
+}
+
+thead {
+    background-color: #5c7a1f;
+    font-weight: bold;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #cce699;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #e0f0c2;
+}
+
+th, td {
+    padding: 1em;
+    min-width: 10em;
+}
+
+span.offer {
+    font-weight: bold;
+    color: green;
+}
+
+span.warn {
+    display: block;
+    color: crimson;
+}
+
+td.enhanced {
+    font-weight: bold;
+    color: green;
+}
+
+div.banner {
+    width: 112px;
+    height: 140px;
+    border: solid 3px black;
+    border-radius: 10px;
+    float: right;
+    text-align: center;
+    padding: 4px;
+    background-color: #e0f0c2;
+}
+
+div.banner span {
+    font-weight: bold;
+    display: block;
+}
+
+form {
+    border: solid 1px lightgray;
+    padding: 2em;
+    background-color: #e0f0c2;
+}
+
+label, textarea, input, select {
+    display: block;
+}
+
+input, select {
+    margin-bottom: 1em;
+}
+
+textarea {
+    height: 20em;
+    width: 80%;
+}
+
+div.radio {
+    margin-left: 2em;    
+}
+
+div.radio label, div.radio input {
+    display: inline;
+}
+
+span.string {
+    color: darkgreen;
+}
+
+p.label {
+    font-style: italic;
+}
+
+p.answer {
+    text-indent: 3em;
+}

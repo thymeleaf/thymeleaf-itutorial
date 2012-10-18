@@ -1,0 +1,4 @@
+All icons used in this app, except Thymeleaf logo, are from
+	http://famfamfam.com/lab/icons/silk/
+with license "Creative Commons Attribution 2.5".
+

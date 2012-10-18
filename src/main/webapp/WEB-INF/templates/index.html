@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf Interactive Tutorial</title>
+        <link rel="stylesheet" href="../../main-static.css" th:href="@{/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <img src="../../thymeleaflogonameverysmall.png" th:src="@{/thymeleaflogonameverysmall.png}"/>
+        <h1>The Thymeleaf Interactive Tutorial</h1>
+        <p>Welcome to the Thymeleaf Interactive Tutorial. Thymeleaf version: <b>2.0.14</b></p>
+		<h2>Description</h2>
+		<ul>
+		    <li>This tutorial will guide you through the most important aspects of the Thymeleaf <i>Standard Dialects</i>.</li>
+		    <li>You will need:
+			  <ul>
+			    <li>A <b>browser</b> &ndash; this one will do! ;-)</li>
+			    <li>A <b>text editor</b> for editing files in <kbd>WEB-INF/templates</kbd>, directly on the
+				    <kbd>webapps</kbd> folder of your web server, while it is running. Preferably, pick an editor with 
+					Java &amp; HTML syntax highlight, like <i>Notepad++</i>, <i>Textpad</i> or <i>gedit</i>.</li>
+			    <li>A <b>PDF</b> file reader in order to open the Thymeleaf tutorial guides, 
+                    if you need them.</li>
+			  </ul>
+			</li>
+			<li>At some points during this tutorial you will be opening files in your browser in a <i>static</i> way, this is, without
+			    Thymeleaf executing them so that you can experience the <i>Natural Template</i> advantage. 
+                You will be able to notice that you are watching a static file because background will be
+				<i>grey</i> instead of <i>pale yellow</i>. Usually a <b>Back</b> button will get you out of the static
+				display, but you can also go back to the <i>executed</i> mode simply by removing the
+				"<kbd>/static</kbd>" part of the URL.</li>
+		</ul>
+        <h2>Table of contents</h2>
+        <ul>
+            <li><a href="exercise01/question.html" th:href="@{/templates/exercise01/question.html}">Exercise 1: bean values</a></li>
+            <li><a href="exercise02/question.html" th:href="@{/templates/exercise02/question.html}">Exercise 2: simple formatting</a></li>
+            <li><a href="exercise03/question.html" th:href="@{/templates/exercise03/question.html}">Exercise 3: string concatenation</a></li>
+            <li><a href="exercise04/question.html" th:href="@{/templates/exercise04/question.html}">Exercise 4: internationalization</a></li>
+            <li><a href="exercise05/question.html" th:href="@{/templates/exercise05/question.html}">Exercise 5: escaped and unescaped text</a></li>
+            <li><a href="exercise06/question.html" th:href="@{/templates/exercise06/question.html}">Exercise 6: iteration</a></li>
+            <li><a href="exercise07/question.html" th:href="@{/templates/exercise07/question.html}">Exercise 7: iteration stats</a></li>
+            <li><a href="exercise08/question.html" th:href="@{/templates/exercise08/question.html}">Exercise 8: conditions</a></li>
+            <li><a href="exercise09/question.html" th:href="@{/templates/exercise09/question.html}">Exercise 9: more on conditions</a></li>
+            <li><a href="exercise10/question.html" th:href="@{/templates/exercise10/question.html}">Exercise 10: Spring expression language</a></li>
+            <li><a href="exercise11/question.html" th:href="@{/templates/exercise11/question.html}">Exercise 11: links</a></li>
+            <li><a href="exercise12/question.html" th:href="@{/templates/exercise12/question.html}">Exercise 12: forms</a></li>
+            <li><a href="exercise13/question.html" th:href="@{/templates/exercise13/question.html}">Exercise 13: inlining</a></li>
+            <li><a href="exercise14/question.html" th:href="@{/templates/exercise14/question.html}">Exercise 14: fragments</a></li>
+        </ul>
+        <p>You can find much more documentation on Thymeleaf at the
+            <a href="http://www.thymeleaf.org">Thymeleaf website</a>.</p>
+        <p>For any questions or help, you can use the <a href="http://forum.thymeleaf.org/">user forum</a>.</p>
+        <h3 class="footer">Copyright &copy; 2012 The Thymeleaf Team</h3>
+    </body>
+</html>

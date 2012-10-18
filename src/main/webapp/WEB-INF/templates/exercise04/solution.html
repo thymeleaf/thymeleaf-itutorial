@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{tutorial.exercise4}">Thymeleaf tutorial: exercise 4</title>
+        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1 th:text="#{tutorial.exercise4}">Thymeleaf tutorial - Solution for exercise 4: internationalization</h1>
+        <h2 th:text="#{product.info}">Product information</h2>
+        <dl>
+            <dt th:text="#{product.name}">Product name</dt>
+            <dd th:text="${product.description}">Red chair</dd>
+
+            <dt th:text="#{product.price}">Product price</dt>
+            <dd th:text="${#numbers.formatDecimal(product.price, 1, 2)}">350</dd>
+
+            <dt th:text="#{product.available}">Product available from</dt>
+            <dd th:text="${#dates.format(product.availableFrom, 'dd-MMM-yyyy')}">28-Jun-2012</dd>
+        </dl>
+        <a href="javascript:history.back()" class="back" th:text="#{back}">Back</a>
+    </body>
+</html>

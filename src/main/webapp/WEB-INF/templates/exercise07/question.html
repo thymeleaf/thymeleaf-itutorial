@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial: exercise 7</title>
+        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Thymeleaf tutorial - Exercise 7: iteration stats</h1>
+        <p>This exercise introduces concepts from chapter 6 - section 2 of the <i><a href="../../../doc/Tutorial - Using Thymeleaf 20121017.pdf" 
+				   th:href="@{'/doc/Tutorial - Using Thymeleaf 20121017.pdf'}">Using Thymeleaf</a></i> manual</p>
+        <ol>
+            <li>
+                Open the <a href="../../templates/exercise07/answer.html" 
+                  th:href="@{/resources/templates/exercise07/answer.html}"><kbd>WEB-INF/templates/exercise07/answer.html</kbd></a> template file with your code editor.
+            </li>
+            <li>
+                Modify the template in order to show the row index in the first column. 
+                <i>Tip: use the iteration status variable from your <kbd>th:each</kbd>.</i> 
+            </li>
+            <li>
+                Check your answer: <a href="answer.html" th:href="@{/templates/exercise07/answer.html}">Execute it</a>.
+            </li>
+            <li>
+                Now modify the template in order to obtain a more real-looking static prototype by adding 
+                some additional rows to the table (these rows should be removed when Thymeleaf executes).
+            </li>
+            <li>
+                Check your answer again:
+                <a href="answer.html" th:href="@{/static/templates/exercise07/answer.html}">See it statically</a> |  
+                <a href="answer.html" th:href="@{/templates/exercise07/answer.html}">Execute it</a>.
+            </li>
+            <li>
+                Finally, you can compare your answer with our proposed solution:
+                <a href="solution.html" th:href="@{/templates/exercise07/solution.html}">Execute it</a> |
+                <a href="solution.html" th:href="@{/resources/templates/exercise07/solution.html}">See the code</a> |
+                <a href="solution.html" th:href="@{/static/templates/exercise07/solution.html}">See it statically</a>.
+            </li>
+        </ol>
+        <a href="../index.html" th:href="@{/}" class="back">Back to index</a>
+        <a href="../exercise08/question.html" th:href="@{/templates/exercise08/question.html}" class="next">Next exercise</a>
+    </body>
+</html>

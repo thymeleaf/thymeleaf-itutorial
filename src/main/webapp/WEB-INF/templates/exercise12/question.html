@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial: exercise 12</title>
+        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Thymeleaf tutorial - Exercise 12: forms</h1>
+        <p>This exercise introduces concepts from chapter 4 - section 3 of the <i><a href="../../../doc/Tutorial - Using Thymeleaf 20121017.pdf" 
+           th:href="@{'/doc/Tutorial - Using Thymeleaf 20121017.pdf'}">Using Thymeleaf</a></i> manual
+           and also chapter 6 of the <i><a href="../../../doc/Tutorial - Thymeleaf + Spring 3 20121017.pdf" 
+           th:href="@{'/doc/Tutorial - Thymeleaf + Spring 3 20121017.pdf'}">Thymeleaf + Spring 3</a></i> manual.
+        </p>
+        <ol>
+            <li>
+                Open the <a href="../../templates/exercise12/answer.html" 
+                  th:href="@{/resources/templates/exercise12/answer.html}"><kbd>WEB-INF/templates/exercise12/answer.html</kbd></a> template with some code editor
+            </li>
+            <li>
+                A bean of class 
+                <a href="../../code/Customer.java" th:href="@{/resources/code/Customer.java}"><kbd>Customer</kbd></a> 
+                has been set into the context model with variable name <b>customer</b>.
+                This is a complex bean, containing properties of the
+                <a href="../../code/Gender.java" th:href="@{/resources/code/Gender.java}"><kbd>Gender</kbd></a> and
+                <a href="../../code/PaymentMethod.java" th:href="@{/resources/code/PaymentMethod.java}"><kbd>PaymentMethod</kbd></a>
+                enum types.
+            </li>
+            
+            <li>
+                Modify the template in order to bind bean fields into form fields.
+                You have to use <kbd>th:object</kbd> and <kbd>th:field</kbd> attributes. <br />
+                As this exercise is more complex than previous ones, some hints have been written 
+                as HTML comments in the <kbd>answer.html</kbd> template.
+            </li>
+            <li>
+                Check your answer, clicking on the <i>submit</i> button in order to check that the form works correctly: 
+                <a href="answer.html" th:href="@{/templates/exercise12/answer.html}">Execute it</a> |
+                <a href="answer.html" th:href="@{/static/templates/exercise12/answer.html}">See it statically</a>. 
+            </li>
+            <li>
+                Finally, you can compare your answer with our proposed solution:
+                <a href="solution.html" th:href="@{/templates/exercise12/solution.html}">Execute it</a> |
+                <a href="solution.html" th:href="@{/resources/templates/exercise12/solution.html}">See the code</a> |
+                <a href="solution.html" th:href="@{/static/templates/exercise12/solution.html}">See it statically</a>.
+            </li>
+        </ol>
+        <a href="../index.html" th:href="@{/}" class="back">Back to index</a>
+        <a href="../exercise13/question.html" th:href="@{/templates/exercise13/question.html}" class="next">Next exercise</a>
+    </body>
+</html>

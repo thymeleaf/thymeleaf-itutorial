@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial: exercise 4</title>
+        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Thymeleaf tutorial - Exercise 4: internationalization</h1>
+        <p>This exercise introduces concepts from chapter 3 of the <i><a href="../../../doc/Tutorial - Using Thymeleaf 20121017.pdf" 
+				   th:href="@{'/doc/Tutorial - Using Thymeleaf 20121017.pdf'}">Using Thymeleaf</a></i> manual</p>
+        <ol>
+            <li>
+                Open the <a href="../../templates/exercise04/answer.html" 
+                  th:href="@{/resources/templates/exercise04/answer.html}"><kbd>WEB-INF/templates/exercise04/answer.html</kbd></a> template file with your code editor.
+            </li>
+            <li>
+                Modify the template in order to internationalize all page texts. You can view the
+                i18n files at the following links:
+                <a href="../../classes/messages_en.properties" th:href="@{/resources/i18n/messages_en.properties}">English texts</a>
+                <a href="../../classes/messages_es.properties" th:href="@{/resources/i18n/messages_es.properties}">Spanish texts</a>
+                <a href="../../classes/messages_fr.properties" th:href="@{/resources/i18n/messages_fr.properties}">French texts</a>
+            </li>
+            <li>
+                Check your answer
+                <ul>
+                  <li>English:
+                    <a href="answer.html" th:href="@{/templates/exercise04/answer.html(locale='en')}">Execute it</a> |
+                    <a href="answer.html" th:href="@{/static/templates/exercise04/answer.html(locale='en')}">See it statically</a>.
+                  </li>
+                  <li>Spanish:
+                    <a href="answer.html" th:href="@{/templates/exercise04/answer.html(locale='es')}">Execute it</a> |
+                    <a href="answer.html" th:href="@{/static/templates/exercise04/answer.html(locale='es')}">See it statically</a>.
+                  </li>
+                  <li>French:
+                    <a href="answer.html" th:href="@{/templates/exercise04/answer.html(locale='fr')}">Execute it</a> |
+                    <a href="answer.html" th:href="@{/static/templates/exercise04/answer.html(locale='fr')}">See it statically</a>.
+                  </li>
+                </ul>
+            </li>
+            <li>
+                Finally, you can compare your answer with our proposed solutions:
+                <ul>
+                  <li>English:
+                    <a href="solution.html" th:href="@{/templates/exercise04/solution.html(locale='en')}">Execute it</a> |
+                    <a href="solution.html" th:href="@{/resources/templates/exercise04/solution.html(locale='en')}">See the code</a> |
+                    <a href="solution.html" th:href="@{/static/templates/exercise04/solution.html(locale='en')}">See it statically</a>.
+                  </li>
+                  <li>Spanish:
+                    <a href="solution.html" th:href="@{/templates/exercise04/solution.html(locale='es')}">Execute it</a> |
+                    <a href="solution.html" th:href="@{/resources/templates/exercise04/solution.html(locale='es')}">See the code</a> |
+                    <a href="solution.html" th:href="@{/static/templates/exercise04/solution.html(locale='es')}">See it statically</a>.
+                  </li>
+                  <li>French:
+                    <a href="solution.html" th:href="@{/templates/exercise04/solution.html(locale='fr')}">Execute it</a> |
+                    <a href="solution.html" th:href="@{/resources/templates/exercise04/solution.html(locale='fr')}">See the code</a> |
+                    <a href="solution.html" th:href="@{/static/templates/exercise04/solution.html(locale='fr')}">See it statically</a>.
+                  </li>
+                </ul>
+            </li>
+        </ol>
+        <a href="../index.html" th:href="@{/}" class="back">Back to index</a>
+        <a href="../exercise05/question.html" th:href="@{/templates/exercise05/question.html}" class="next">Next exercise</a>
+    </body>
+</html>
