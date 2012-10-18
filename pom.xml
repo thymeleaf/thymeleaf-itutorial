@@ -23,7 +23,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.thymeleaf</groupId>
-    <artifactId>itutorial</artifactId>
+    <artifactId>thymeleaf-itutorial</artifactId>
     <packaging>war</packaging>
     <version>20121017</version>
     <name>Thymeleaf Examples - Thymeleaf Interactive Tutorial</name>
@@ -174,10 +174,10 @@
                                 </goals>
                                 <configuration>
                                     <descriptors>
-                                        <descriptor>${basedir}/src/assembly/sources.xml</descriptor>
+                                        <descriptor>${basedir}/src/assembly/dist.xml</descriptor>
                                     </descriptors>
                                     <appendAssemblyId>true</appendAssemblyId>
-                                    <finalName>${project.groupId}-${project.artifactId}-${project.version}</finalName>
+                                    <finalName>${project.artifactId}-${project.version}</finalName>
                                 </configuration>
                             </execution>
                         </executions>
