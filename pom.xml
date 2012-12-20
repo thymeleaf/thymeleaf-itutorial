@@ -25,7 +25,7 @@
     <groupId>org.thymeleaf</groupId>
     <artifactId>thymeleaf-itutorial</artifactId>
     <packaging>war</packaging>
-    <version>20121017</version>
+    <version>20121220</version>
     <name>Thymeleaf Examples - Thymeleaf Interactive Tutorial</name>
     <description>Thymeleaf Interactive Tutorial</description>
 
@@ -96,7 +96,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springframework.version>3.1.2.RELEASE</springframework.version>
-        <thymeleaf.version>2.0.14</thymeleaf.version>
+        <thymeleaf.version>2.0.15</thymeleaf.version>
         <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
     </properties>
 
