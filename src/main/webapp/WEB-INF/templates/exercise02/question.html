@@ -2,51 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Thymeleaf tutorial: exercise 2</title>
-        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
         <meta charset="utf-8" />
     </head>
     <body>
-        <h1>Thymeleaf tutorial - Exercise 2: simple formatting</h1>
-        <p>This exercise introduces concepts from chapter 16 of the <i><a href="../../../doc/Tutorial - Using Thymeleaf 20130224.pdf" 
-				   th:href="@{'/doc/Tutorial - Using Thymeleaf 20130224.pdf'}">Using Thymeleaf</a></i> manual</p>
-        <ol>
-            <li>
-                Open the <a href="../../templates/exercise02/answer.html" 
-                  th:href="@{/resources/templates/exercise02/answer.html}"><kbd>WEB-INF/templates/exercise02/answer.html</kbd></a> template file with your code editor.
-            </li>
-            <li>
-                Modify the template in order to show bean values as you did in exercise 1. A bean of class 
-				<a href="../../code/Product.java" th:href="@{/resources/code/Product.java}">Product</a>
-				has been already set into the context model with variable name <b>product</b>.
-            </li>
-            <li>
-                Now let's add some formatting to those <i>Integer</i> and <i>Date</i> properties. For this, 
-				have a look at the definition of the <kbd>#dates</kbd>
-                and <kbd>#numbers</kbd> utility objects at the <i>Expression Utility Objects</i> Appendix 
-				of the
-				<a href="../../../doc/Tutorial - Using Thymeleaf 20130224.pdf" 
-				   th:href="@{'/doc/Tutorial - Using Thymeleaf 20130224.pdf'}">Using Thymeleaf</a> tutorial.
-            </li>
-            <li>
-                Check your answer: <a href="answer.html" th:href="@{/templates/exercise02/answer.html}">Execute it</a>.
-            </li>
-            <li>
-                Now modify the template in order to obtain a static prototype that makes sense (for example,
-                by substituting all those <kbd>XXX</kbd> by some prototyping data).
-            </li>
-            <li>
-                Check your answer again:
-                <a href="answer.html" th:href="@{/static/templates/exercise02/answer.html}">See it statically</a> |  
-                <a href="answer.html" th:href="@{/templates/exercise02/answer.html}">Execute it</a>.
-            </li>
-            <li>
-                Finally, you can compare your answer with our proposed solution:
-                <a href="solution.html" th:href="@{/templates/exercise02/solution.html}">Execute it</a> |
-                <a href="solution.html" th:href="@{/resources/templates/exercise02/solution.html}">See the code</a> |
-                <a href="solution.html" th:href="@{/static/templates/exercise02/solution.html}">See it statically</a>.
-            </li>
-        </ol>
-        <a href="../index.html" th:href="@{/}" class="back">Back to index</a>
-        <a href="../exercise03/question.html" th:href="@{/templates/exercise03/question.html}" class="next">Next exercise</a>
+        <h1>Thymeleaf tutorial - Answer for exercise 2: bean values</h1>
+        <h2>Product information</h2>
+        <dl>
+            <dt>Product name</dt>
+            <dd>XXX</dd>
+
+            <dt>Product price</dt>
+            <dd>XXX</dd>
+
+            <dt>Product available from</dt>
+            <dd>XXX</dd>
+        </dl>
     </body>
 </html>

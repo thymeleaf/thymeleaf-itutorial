@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial - Exercise 9: more on conditions</title>
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <p>
+            This exercise introduces concepts from
+            <a href="http://www.thymeleaf.org/doc/html/Using-Thymeleaf.html#conditional-evaluation"
+               title="Open Thymeleaf manual" target="_blank">chapter 7 of the Using Thymeleaf</a>
+            manual.
+        </p>
+        <ol>
+            <li>
+                A <kbd>List</kbd> of 
+                <a href="../../code/Customer.java" th:href="@{/resources/code/Customer.java}"
+                   title="See Customer.java source code" target="_blank"><kbd>Customer</kbd></a> objects 
+                has been set into the context model with variable name <b>customerList</b>.
+                This is a complex bean, containing properties of the
+                <a href="../../code/Gender.java" th:href="@{/resources/code/Gender.java}"
+                   title="See Gender.java source code" target="_blank"><kbd>Gender</kbd></a> and
+                <a href="../../code/PaymentMethod.java" th:href="@{/resources/code/PaymentMethod.java}"
+                   title="See PaymentMethod.java source code" target="_blank"><kbd>PaymentMethod</kbd></a>
+                enum types.
+            </li>
+            <li>
+                Edit the source code in order to practice three different kinds of condition expressions. Use
+                the comment hints at the HTML to guide you.<br />
+                <i>Tip: use <kbd>name()</kbd> in order to obtain the <kbd>String</kbd> representation of an enum value.</i>
+                <ul>
+                  <li>In the <b>gender</b> column you must show a boy image, a girl image or an 'Unknown' text depending
+                      on customer gender.</li>
+                  <li>In the <b>payment method</b> column you must show a warning message when payment is not
+                      credit card payment.</li>
+                  <li>In the <b>balance</b> column you must add a specific CSS class when balance is above $10000.</li>
+                </ul>
+            </li>
+            <li>
+                Now modify the template in order to obtain a more real-looking static prototype by adding 
+                some additional rows to the table (these rows should be removed when Thymeleaf executes).
+            </li>
+            <li>
+                You can check the proposed solution by pressing the <b>Show solution</b> button.
+            </li>
+        </ol>
+    </body>
+</html>

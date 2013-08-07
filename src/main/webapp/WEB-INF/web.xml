@@ -4,19 +4,10 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
     <!-- Spring MVC front controller -->
     <servlet>
-        <servlet-name>static</servlet-name>
-        <servlet-class>org.thymeleaf.itutorial.StaticServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
         <servlet-name>spring</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>static</servlet-name>
-        <url-pattern>/static/*</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
         <url-pattern>/</url-pattern>

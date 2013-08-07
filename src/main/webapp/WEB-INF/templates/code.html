@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf Interactive Tutorial</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../css/exercise.css" th:href="@{/css/exercise.css}" />
+        <link rel="stylesheet" href="../../jquery/jquery-ui-1.9.2.custom.min.css" th:href="@{/jquery/jquery-ui-1.9.2.custom.min.css}" />
+        <script th:src="@{/jquery/jquery-1.8.3.min.js}"></script>
+        <script th:src="@{/jquery/jquery-ui-1.9.2.custom.min.js}"></script>
+        <script src="http://use.edgefonts.net/source-code-pro.js"></script>
+        <script th:src="@{/ace/src-min-noconflict/ace.js}" type="text/javascript" charset="utf-8"></script>
+        <script th:src="@{/js/Editor.js}"></script>
+        <script th:inline="javascript">
+            // <![CDATA[
+            var code = /*[[${code}]]*/ 'public class Hello {}';
+            var language = /*[[${language}]]*/ 'html';
+            
+            $(document).ready(function() {
+                var editor = new Editor('editor');
+                editor.setLanguage(language);
+                editor.makeReadOnly();
+                editor.setCode(code);
+            });
+            // ]]>
+        </script>
+        <style type="text/css">
+            #editor { height: 90%; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 th:text="${resource}">Product.java</h1>
+        </header>
+        <div id="editor"></div>
+        <footer>
+            <span>The Thymeleaf Interactive Tutorial</span>
+        </footer>
+    </body>
+</html>

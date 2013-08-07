@@ -2,74 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Thymeleaf tutorial: exercise 14</title>
-        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
         <meta charset="utf-8" />
     </head>
     <body>
-        <h1>Thymeleaf tutorial - Exercise 14: fragments</h1>
-        <p>
-            This exercise introduces concepts from chapter 8 of the <i><a href="../../../doc/Tutorial - Using Thymeleaf 20130224.pdf" 
-		    th:href="@{'/doc/Tutorial - Using Thymeleaf 20130224.pdf'}">Using Thymeleaf</a></i> manual and uses
-            <a href="http://static.springsource.org/spring/docs/3.1.x/spring-framework-reference/html/expressions.html">Spring expression language</a>
-        </p>
-        <ol>
-            <li>
-                Open the <a href="../../templates/exercise14/answer1.html" 
-                  th:href="@{/resources/templates/exercise14/answer1.html}"><kbd>answer1.html</kbd></a>, 
-                  <a href="../../templates/exercise14/answer2.html" 
-                  th:href="@{/resources/templates/exercise14/answer2.html}"><kbd>answer2.html</kbd></a> and 
-                  <a href="../../templates/exercise14/answer3.html" 
-                  th:href="@{/resources/templates/exercise14/answer3.html}"><kbd>answer3.html</kbd></a> template files 
-				  from the <kbd>WEB-INF/templates/exercise14/</kbd> folder with your code editor.
-            </li>
-            <li>
-                Set <kbd>/logo.png</kbd> as the source for the <kbd>img</kbd> logo element.
-            </li>
-            <li>
-                Turn the <kbd>div</kbd> element in <kbd>answer1.html</kbd> into a fragment by using
-                <kbd>th:fragment</kbd>, and include it into the other templates just below the
-                <i>Product List</i> header. Do this in two different ways:
-                <ul>
-                  <li>Into <kbd>answer2.html</kbd>, using its fragment name (standard Thymeleaf-to-Thymeleaf) inclusion
-                      mechanism</li>
-                  <li>Into <kbd>answer3.html</kbd>, using the DOM selector expression <kbd>//div[@id='bannerElement']</kbd>.</li>  
-                </ul>
-                When specifying your template inclusions, remember that template roots must start 
-                with <kbd>/exercise14</kbd>, like "<kbd>/exercise14/answer1.html</kbd>".
-            </li>
-            <li>
-                Check your answer:
-                <ul>
-                  <li><kbd>answer1.html</kbd>: 
-                      <a href="answer1.html" th:href="@{/templates/exercise14/answer.html(page=1)}">Execute it</a> |
-                      <a href="answer1.html" th:href="@{/static/templates/exercise14/answer1.html}">See it statically</a>.</li>
-                  <li><kbd>answer2.html</kbd>: 
-                      <a href="answer2.html" th:href="@{/templates/exercise14/answer.html(page=2)}">Execute it</a> |
-                      <a href="answer2.html" th:href="@{/static/templates/exercise14/answer2.html}">See it statically</a>.</li>
-                  <li><kbd>answer3.html</kbd>: 
-                      <a href="answer3.html" th:href="@{/templates/exercise14/answer.html(page=3)}">Execute it</a> |
-                      <a href="answer3.html" th:href="@{/static/templates/exercise14/answer3.html}">See it statically</a>.</li>
-                </ul> 
-            </li>
-            <li>
-                Finally, you can compare your answer with our proposed solution:
-                <ul>
-                  <li><kbd>solution1.html</kbd>: 
-                      <a href="solution1.html" th:href="@{/templates/exercise14/solution.html(page=1)}">Execute it</a> |
-                      <a href="solution1.html" th:href="@{/resources/templates/exercise14/solution1.html}">See the code</a> |
-                      <a href="solution1.html" th:href="@{/static/templates/exercise14/solution1.html}">See it statically</a>.</li>
-                  <li><kbd>solution2.html</kbd>: 
-                      <a href="solution2.html" th:href="@{/templates/exercise14/solution.html(page=2)}">Execute it</a> |
-                      <a href="solution2.html" th:href="@{/resources/templates/exercise14/solution2.html}">See the code</a> |
-                      <a href="solution2.html" th:href="@{/static/templates/exercise14/solution2.html}">See it statically</a>.</li>
-                  <li><kbd>solution3.html</kbd>: 
-                      <a href="solution3.html" th:href="@{/templates/exercise14/solution.html(page=3)}">Execute it</a> |
-                      <a href="solution3.html" th:href="@{/resources/templates/exercise14/solution3.html}">See the code</a> |
-                      <a href="solution3.html" th:href="@{/static/templates/exercise14/solution3.html}">See it statically</a>.</li>
-                </ul>
-            </li>
-            
-        </ol>
-        <a href="../index.html" th:href="@{/}" class="back">Back to index</a>
+        <h1>Thymeleaf tutorial - Answer for exercise 14: fragments</h1>
+        <h2>Product information</h2>
+        <div class="banner" id="bannerElement">
+            <img alt="Thymeleaf logo" />
+            <span>The Thymeleaf tutorial</span>
+        </div>
+        <dl>
+            <dt>Product name</dt>
+            <dd th:text="${product.description}">Red chair</dd>
+
+            <dt>Product price</dt>
+            <dd th:text="${product.price}">350</dd>
+
+            <dt>Product available from</dt>
+            <dd th:text="${product.availableFrom}">28-Jun-2013</dd>
+        </dl>
     </body>
 </html>

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Thymeleaf tutorial: exercise 12</title>
-        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
         <meta charset="utf-8" />
     </head>
     <body>
@@ -27,6 +27,5 @@
             <dt>Balance</dt>
             <dd th:text="'$' + *{balance}">$300</dd>
         </dl>
-        <a href="javascript:history.back()" class="back">Back</a>
     </body>
 </html>

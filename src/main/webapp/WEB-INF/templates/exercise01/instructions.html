@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial - Exercise 1: bean values</title>
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <p>
+            This exercise introduces concepts from
+            <a href="http://www.thymeleaf.org/doc/html/Using-Thymeleaf.html#standard-expression-syntax"
+               title="Open Thymeleaf manual" target="_blank">chapter 4 of the Using Thymeleaf</a>
+            manual.
+        </p>
+        <ol>
+            <li>
+                Edit the source code in order to show bean values instead of that ugly <b>XXX</b>. <br />
+                A bean of class 
+                <a href="../../code/Product.java" th:href="@{/resources/code/Product.java}"
+                   title="See Product.java source code" target="_blank">Product</a>
+                has been already set into the context model with variable name <b>product</b>.
+            </li>
+            <li>
+                Now modify the template in order to obtain a static prototype that makes sense (for example,
+                by substituting all those <b>XXX</b> by some prototyping data).
+            </li>
+            <li>
+                You can check the proposed solution by pressing the <b>Show solution</b> button.
+            </li>
+        </ol>
+    </body>
+</html>

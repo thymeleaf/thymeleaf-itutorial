@@ -2,59 +2,47 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Thymeleaf tutorial: exercise 9</title>
-        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
         <meta charset="utf-8" />
     </head>
     <body>
-        <h1>Thymeleaf tutorial - Exercise 9: more on conditions</h1>
-        <p>This exercise introduces concepts from chapter 7 of the <i><a href="../../../doc/Tutorial - Using Thymeleaf 20130224.pdf" 
-				   th:href="@{'/doc/Tutorial - Using Thymeleaf 20130224.pdf'}">Using Thymeleaf</a></i> manual</p>
-        <ol>
-            <li>
-                Open the <a href="../../templates/exercise09/answer.html" 
-                  th:href="@{/resources/templates/exercise09/answer.html}"><kbd>WEB-INF/templates/exercise09/answer.html</kbd></a> template file with your code editor.
-            </li>
-            <li>
-                A <kbd>List</kbd> of 
-                <a href="../../code/Customer.java" th:href="@{/resources/code/Customer.java}"><kbd>Customer</kbd></a> objects 
-                has been set into the context model with variable name <b>customerList</b>.
-                This is a complex bean, containing properties of the
-                <a href="../../code/Gender.java" th:href="@{/resources/code/Gender.java}"><kbd>Gender</kbd></a> and
-                <a href="../../code/PaymentMethod.java" th:href="@{/resources/code/PaymentMethod.java}"><kbd>PaymentMethod</kbd></a>
-                enum types.
-            </li>
-            <li>
-                Modify the template in order to practice three different kinds of condition expressions. Use
-                the comment hints at the HTML to guide you.<br />
-                <i>Tip: use <kbd>name()</kbd> in order to obtain the <kbd>String</kbd> representation of an enum value.</i>
-                <ul>
-                  <li>In the <b>gender</b> column you must show a boy image, a girl image or an 'Unknown' text depending
-                      on customer gender.</li>
-                  <li>In the <b>payment method</b> column you must show a warning message when payment is not
-                      credit card payment.</li>
-                  <li>In the <b>balance</b> column you must add a specific CSS class when balance is above $10000.</li>
-                </ul>
-            </li>
-            <li>
-                Check your answer: <a href="answer.html" th:href="@{/templates/exercise09/answer.html}">Execute it</a>.
-            </li>
-            <li>
-                Now modify the template in order to obtain a more real-looking static prototype by adding 
-                some additional rows to the table (these rows should be removed when Thymeleaf executes).
-            </li>
-            <li>
-                Check your answer again:
-                <a href="answer.html" th:href="@{/static/templates/exercise09/answer.html}">See it statically</a> |  
-                <a href="answer.html" th:href="@{/templates/exercise09/answer.html}">Execute it</a>.
-            </li>
-            <li>
-                Finally, you can compare your answer with our proposed solution:
-                <a href="solution.html" th:href="@{/templates/exercise09/solution.html}">Execute it</a> |
-                <a href="solution.html" th:href="@{/resources/templates/exercise09/solution.html}">See the code</a> |
-                <a href="solution.html" th:href="@{/static/templates/exercise09/solution.html}">See it statically</a>.
-            </li>
-        </ol>
-        <a href="../index.html" th:href="@{/}" class="back">Back to index</a>
-        <a href="../exercise10/question.html" th:href="@{/templates/exercise10/question.html}" class="next">Next exercise</a>
+        <h1>Thymeleaf tutorial - Answer for exercise 9: more on conditions</h1>
+        <h2>Customer list</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Gender</th>
+                    <th>Payment method</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="customer : ${customerList}">
+                    <td th:text="${customer.firstName}">Peter</td>
+                    <td th:text="${customer.lastName}">Jackson</td>
+                    <!-- 
+                       Use th:switch for selecting content based on ${customer.gender}.
+                       As genre can be null if unknown, better use ${customer.gender?.name()}
+                       for obtaining its name.
+                    -->
+                    <td>
+                        <img alt="Male" /> <!-- Use "/male.png" image -->
+                        <img alt="Female" /> <!-- Use "/female.png" image -->
+                        <span>Unknown</span>
+                    </td>
+                    <td>
+                        <span th:text="${customer.paymentMethod.description}">Direct debit</span>
+                        <!-- Show next message only when paymentMethod is not CREDIT_CARD -->
+                        <span class="warn">
+                            Payment must be done in the next 4 days
+                        </span>
+                    </td>
+                    <!-- Add class="enhanced" when balance is greater than 10000 -->
+                    <td th:text="${customer.balance}">350</td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Thymeleaf tutorial: exercise 7</title>
-        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
         <meta charset="utf-8" />
     </head>
     <body>
@@ -22,28 +22,27 @@
                     <td th:text="${productStat.count}">1</td>
                     <td th:text="${product.description}">Red chair</td>
                     <td th:text="${'$' + #numbers.formatDecimal(product.price, 1, 2)}">$350</td>
-                    <td th:text="${#dates.format(product.availableFrom, 'dd-MMM-yyyy')}">28-Jun-2012</td>
+                    <td th:text="${#dates.format(product.availableFrom, 'dd-MMM-yyyy')}">28-Jun-2013</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>White table</td>
                     <td>$200</td>
-                    <td>15-Jul-2012</td>
+                    <td>15-Jul-2013</td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Reb table</td>
                     <td>$200</td>
-                    <td>15-Jul-2012</td>
+                    <td>15-Jul-2013</td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Blue table</td>
                     <td>$200</td>
-                    <td>15-Jul-2012</td>
+                    <td>15-Jul-2013</td>
                 </tr>
             </tbody>
         </table>
-        <a href="javascript:history.back()" class="back">Back</a>
     </body>
 </html>

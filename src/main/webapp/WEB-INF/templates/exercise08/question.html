@@ -2,37 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Thymeleaf tutorial: exercise 8</title>
-        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
         <meta charset="utf-8" />
     </head>
     <body>
-        <h1>Thymeleaf tutorial - Exercise 8: conditions</h1>
-        <p>
-            This exercise introduces concepts from chapter 7 of the <i><a href="../../../doc/Tutorial - Using Thymeleaf 20130224.pdf" 
-		    th:href="@{'/doc/Tutorial - Using Thymeleaf 20130224.pdf'}">Using Thymeleaf</a></i> manual and uses
-            <a href="http://static.springsource.org/spring/docs/3.1.x/spring-framework-reference/html/expressions.html">Spring expression language</a>
-        </p>
-        <ol>
-            <li>
-                Open the <a href="../../templates/exercise08/answer.html" 
-                  th:href="@{/resources/templates/exercise08/answer.html}"><kbd>WEB-INF/templates/exercise08/answer.html</kbd></a> template file with your code editor.
-            </li>
-            <li>
-                Make the <kbd>span</kbd> <em>"Special offer!"</em> appear <b>only</b> when price is lower than $100.
-            </li>
-            <li>
-                Check your answer: 
-                <a href="answer.html" th:href="@{/templates/exercise08/answer.html}">Execute it</a> |
-                <a href="answer.html" th:href="@{/static/templates/exercise08/answer.html}">See it statically</a>.  
-            </li>
-            <li>
-                Finally, you can compare your answer with our proposed solution:
-                <a href="solution.html" th:href="@{/templates/exercise08/solution.html}">Execute it</a> |
-                <a href="solution.html" th:href="@{/resources/templates/exercise08/solution.html}">See the code</a> |
-                <a href="solution.html" th:href="@{/static/templates/exercise08/solution.html}">See it statically</a>.
-            </li>
-        </ol>
-        <a href="../index.html" th:href="@{/}" class="back">Back to index</a>
-        <a href="../exercise09/question.html" th:href="@{/templates/exercise09/question.html}" class="next">Next exercise</a>
+        <h1>Thymeleaf tutorial - Answer for exercise 8: conditions</h1>
+        <h2>Product list</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Available from</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product : ${productList}">
+                    <td th:text="${product.description}">Red chair</td>
+                    <td th:text="${'$' + #numbers.formatDecimal(product.price, 1, 2)}">$350</td>
+                    <td th:text="${#dates.format(product.availableFrom, 'dd-MMM-yyyy')}">28-Jun-2013</td>
+                    <td>
+                        <span class="offer">Special offer!</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>

@@ -1,0 +1,34 @@
+body { font-family: 'Trebuchet Ms', Verdana, Arial, sans-serif; background-color: #cce699; }
+
+/* Layout */
+html, body { margin: 3px; padding: 0; }
+html { height: 92%; }
+body { height: 100%; }
+#leftcol, #rightcol { width: 49%; height: 100%; }
+#leftcol { float: left; }
+#rightcol { float: right; }
+#editor, #static-view, #generated-source, #dynamic-view { width: 100%; height: 46%; }
+
+/* Header */
+header { margin-bottom: 4px; }
+header h1 { display: inline; font-size: 1.1em; background: #cce699 url('../logo.png') no-repeat left center; padding-left: 114px; }
+header span { color: #5c7a1f; }
+header nav { display: inline; float: right; }
+
+/* Sections */
+h2 { display: inline; font-size: 1em; color: #5c7a1f; }
+#leftcol nav { margin-left: 1em; display: inline; }
+#editor, #generated-source { margin-bottom: 6px; }
+#editor, #static-view, #generated-source, #dynamic-view { border: solid 1px gray; border-radius: 2px; background-color: white; margin-top: 1px; }
+
+/* Footer */
+footer { clear: both; background-color: #cce699; text-align: right; font-size: 0.8em; }
+
+/* Buttons */
+nav a { text-decoration: none; color: #5c7a1f; font-size: 0.8em; padding: 0 3px 0 3px; border: solid 1px #5c7a1f; border-radius: 4px; }
+nav a:hover { color: white; background-color: #5c7a1f; }
+
+/* Dialogs */
+#instructions, #about { font-size: 0.8em; }
+#instructions h1, #about h1 { font-size: 1.2em; }
+.dialog .ui-widget-header { background-color: #cce699; background-image: none; }

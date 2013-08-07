@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Thymeleaf tutorial: exercise 11</title>
-        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
         <meta charset="utf-8" />
     </head>
     <body>
@@ -14,9 +14,8 @@
             <label for="price">Product price</label>
             <input type="text" id="price" name="price" value="350" th:value="${#numbers.formatDecimal(product.price, 1, 2)}" size="8" />
             <label for="available">Available from</label>
-            <input type="text" id="available" name="available" value="28-Jun-2012" th:value="${#dates.format(product.availableFrom, 'dd-MMM-yyyy')}" size="15" />
+            <input type="text" id="available" name="available" value="28-Jun-2013" th:value="${#dates.format(product.availableFrom, 'dd-MMM-yyyy')}" size="15" />
             <input type="submit" />
         </form>
-        <a href="javascript:history.back()" class="back">Back</a>
     </body>
 </html>

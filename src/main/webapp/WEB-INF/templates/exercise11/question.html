@@ -2,46 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Thymeleaf tutorial: exercise 11</title>
-        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
         <meta charset="utf-8" />
     </head>
     <body>
-        <h1>Thymeleaf tutorial - Exercise 11: links</h1>
-        <p>This exercise introduces concepts from chapter 4 - section 4 of the <i><a href="../../../doc/Tutorial - Using Thymeleaf 20130224.pdf" 
-				   th:href="@{'/doc/Tutorial - Using Thymeleaf 20130224.pdf'}">Using Thymeleaf</a></i> manual</p>
-        <ol>
-            <li>
-                Open the <a href="../../templates/exercise11/answer.html" 
-                  th:href="@{/resources/templates/exercise11/answer.html}"><kbd>WEB-INF/templates/exercise11/answer.html</kbd></a> template file with your code editor.
-            </li>
-            <li>
-                Modify the two links in order to point to <kbd>/exercise11/product.html</kbd> URL
-                with the request parameter <b>action</b>.
-                The value for <b>action</b> parameter must be <em>view</em> for the first link and
-                <em>edit</em> for the second.
-            </li>
-            <li>
-                Check your answer, clicking on the links to ensure they work alright: 
-                <a href="answer.html" th:href="@{/templates/exercise11/answer.html}">Execute it</a>.
-            </li>
-            <li>
-                Now modify the template so that when open <i>statically</i> those links point to their
-                corresponding static HTML documents, this is <kbd>viewProduct.html</kbd> and 
-                <kbd>editProduct.html</kbd>.
-            </li>
-            <li>
-                Check your answer again:
-                <a href="answer.html" th:href="@{/static/templates/exercise11/answer.html}">See it statically</a> |  
-                <a href="answer.html" th:href="@{/templates/exercise11/answer.html}">Execute it</a>.
-            </li>
-            <li>
-                Finally, you can compare your answer with our proposed solution:
-                <a href="solution.html" th:href="@{/templates/exercise11/solution.html}">Execute it</a> |
-                <a href="solution.html" th:href="@{/resources/templates/exercise11/solution.html}">See the code</a> |
-                <a href="solution.html" th:href="@{/static/templates/exercise11/solution.html}">See it statically</a>.
-            </li>
-        </ol>
-        <a href="../index.html" th:href="@{/}" class="back">Back to index</a>
-        <a href="../exercise12/question.html" th:href="@{/templates/exercise12/question.html}" class="next">Next exercise</a>
+        <h1>Thymeleaf tutorial - Answer for exercise 11: links</h1>
+        <h2>Product actions</h2>
+        <ul>
+            <li><a>View product</a></li>
+            <li><a>Edit product</a></li>
+        </ul>
     </body>
 </html>

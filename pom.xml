@@ -97,7 +97,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springframework.version>3.1.2.RELEASE</springframework.version>
         <thymeleaf.version>2.0.16</thymeleaf.version>
-        <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
     </properties>
 
     <build>
@@ -150,6 +149,30 @@
                 </configuration>
             </plugin>
         
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>maven-replacer-plugin</artifactId>
+                <version>1.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase> <!-- FIXME: choose a better phase -->
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>target/thymeleaf-itutorial/WEB-INF/spring-servlet.xml</include>
+                    </includes>
+                    <replacements>
+                        <replacement>
+                            <token>@@THYMELEAF_VERSION@@</token>
+                            <value>${thymeleaf.version}</value>
+                        </replacement>
+                    </replacements>
+                </configuration>
+            </plugin>
         </plugins>
         
     </build>
@@ -258,6 +281,13 @@
                     <artifactId>jms</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     

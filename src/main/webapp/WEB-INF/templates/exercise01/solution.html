@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Thymeleaf tutorial: exercise 1</title>
-        <link rel="stylesheet" href="../../../main-static.css" th:href="@{/main.css}" />
+        <title>Thymeleaf tutorial: exercise 2</title>
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
         <meta charset="utf-8" />
     </head>
     <body>
@@ -16,8 +16,7 @@
             <dd th:text="${product.price}">350</dd>
 
             <dt>Product available from</dt>
-            <dd th:text="${product.availableFrom}">28-Jun-2012</dd>
+            <dd th:text="${product.availableFrom}">28-Jun-2013</dd>
         </dl>
-        <a href="javascript:history.back()" class="back">Back</a>
     </body>
 </html>
