@@ -28,13 +28,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ShowAnswerController {
 
     @Autowired private ServletContext servletContext;
     
-    @RequestMapping("/showSolution/{index}")
+    @RequestMapping(value = "/showSolution/{index}", method = RequestMethod.GET)
     public void showSolution(@PathVariable("index") Integer index, OutputStream response) throws IOException {
         Exercise exercise = Exercise.get(index);
         InputStream template = new ExerciseResourceLoader(servletContext, exercise).getResourceAsStream("solution.html");

@@ -26,6 +26,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ExerciseController {
@@ -35,7 +36,7 @@ public class ExerciseController {
     @Autowired private ServletContext servletContext;
     @Autowired private String thymeleafVersion;
 
-    @RequestMapping("/exercise/{index}")
+    @RequestMapping(value = "/exercise/{index}", method = RequestMethod.GET)
     public String exercise(@PathVariable("index") Integer index, Model model) throws IOException {
         Exercise exercise = Exercise.get(index);
         String question = new ExerciseResourceLoader(servletContext, exercise).getResource("question.html", CHARSET);

@@ -23,12 +23,13 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class EchoController {
 
-    @RequestMapping("/e/c/h/o") // The extra slashes are a trick to allow CSS static prototyping work
+    @RequestMapping(value = "/e/c/h/o", method = RequestMethod.POST) // The extra slashes are a trick to allow CSS static prototyping work
     public void echo(@RequestParam("code") String code, HttpServletResponse response) throws IOException {
         response.getWriter().print(code);
     }

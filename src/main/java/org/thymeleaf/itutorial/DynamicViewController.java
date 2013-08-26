@@ -27,6 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.exceptions.TemplateProcessingException;
 
@@ -35,7 +36,7 @@ public class DynamicViewController {
     
     @Autowired private ServletContext servletContext;
 
-    @RequestMapping("/dynamicView")
+    @RequestMapping(value = "/dynamicView", method = RequestMethod.POST)
     public void dynamicView(@RequestParam("code") String code, HttpServletRequest request, HttpServletResponse response, Locale locale) throws IOException {
         String result = generateCodeOrError(request, response, servletContext, locale, code);
         response.getWriter().print(result);

@@ -14,13 +14,14 @@
         <script th:src="@{/js/ViewUpdater.js}"></script>
         <script th:src="@{/js/Solution.js}"></script>
         <script th:src="@{/js/Dialog.js}"></script>
+        <script th:src="@{/js/CodeDialog.js}"></script>
         <script th:inline="javascript">
             // <![CDATA[
             var CONTEXT_PATH = /*[[@{/}]]*/ '/';
             var EXERCISE = /*[[${exercise.index}]]*/ 1;
             var EDITOR, GENERATED_SOURCE;
             var VIEW_UPDATER, SOLUTION;
-            var INSTRUCTIONS, ABOUT;
+            var INSTRUCTIONS, ABOUT, CODE_DIALOG;
             
             var question = /*[[${question}]]*/ '<h1>Template</h1>';
             
@@ -36,6 +37,7 @@
                 SOLUTION = new Solution(CONTEXT_PATH, EXERCISE, EDITOR, VIEW_UPDATER.updateAll);
                 new StrokeDetector('editor', VIEW_UPDATER.updateAll);
                 VIEW_UPDATER.updateAll();
+                CODE_DIALOG = new CodeDialog(CONTEXT_PATH);
             });
             // ]]>
         </script>
@@ -74,13 +76,13 @@
             </nav>
             <div id="editor"></div>
             <h2>Static view</h2>
-            <iframe id="static-view"></iframe>
+            <iframe id="static-view" name="static-view"></iframe>
         </div>
         <div id="rightcol">
             <h2>Generated source</h2>
             <div id="generated-source"></div>
             <h2>Dynamic view</h2>
-            <iframe id="dynamic-view"></iframe>
+            <iframe id="dynamic-view" name="dynamic-view"></iframe>
         </div>
         <footer>
             <span>The Thymeleaf Interactive Tutorial</span>

@@ -27,6 +27,7 @@ import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.exceptions.TemplateProcessingException;
 
@@ -35,9 +36,11 @@ public class GeneratedSourceController {
     
     @Autowired private ServletContext servletContext;
 
-    @RequestMapping("/generatedSource")
+    @RequestMapping(value = "/generatedSource", method = RequestMethod.POST)
     public void generatedSource(@RequestParam("code") String code, HttpServletRequest request, HttpServletResponse response, Locale locale) throws IOException {
         String result = generateCodeOrEmpty(request, response, servletContext, locale, code);
+        response.setContentType("text/html");
+        response.setCharacterEncoding("utf-8");
         response.getWriter().print(result);
     }
     

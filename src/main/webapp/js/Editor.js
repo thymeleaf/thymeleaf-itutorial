@@ -28,7 +28,11 @@ function Editor(elementId) {
         editor.setReadOnly("true");
     }
     
-    this.getEscapedCode = function() {
-        return encodeURIComponent(editor.getValue());
+    this.getCode = function() {
+        return editor.getValue();
+    }
+    
+    this.destroy = function() {
+        editor.destroy();
     }
 }
