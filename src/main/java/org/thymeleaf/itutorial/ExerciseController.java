@@ -37,12 +37,13 @@ public class ExerciseController {
     @Autowired private String thymeleafVersion;
 
     @RequestMapping(value = "/exercise/{index}", method = RequestMethod.GET)
-    public String exercise(@PathVariable("index") Integer index, Model model) throws IOException {
+    public String exercise(@PathVariable("index") final Integer index, final Model model) throws IOException {
         Exercise exercise = Exercise.get(index);
         String question = new ExerciseResourceLoader(servletContext, exercise).getResource("question.html", CHARSET);
         model.addAttribute("question", question);
         model.addAttribute("exercise", exercise);
         model.addAttribute("thymeleafVersion", thymeleafVersion);
+        model.addAttribute("i18nExercise", index == 4);
         return "exercise.html";
     }
 }

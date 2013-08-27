@@ -15,14 +15,14 @@
  */
 package org.thymeleaf.tools.memoryexecutor;
 
-import org.thymeleaf.tools.memoryexecutor.StaticTemplateExecutor;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.thymeleaf.context.Context;
+import org.thymeleaf.messageresolver.StandardMessageResolver;
 import org.thymeleaf.templatemode.StandardTemplateModeHandlers;
 
 public class StaticTemplateExecutorTest {
-    
+
     @Test
     public void simpleTemplateWithOneVariable() {
         String simpleTemplate =
@@ -48,7 +48,8 @@ public class StaticTemplateExecutorTest {
         String templateMode = StandardTemplateModeHandlers.HTML5.getTemplateModeName();
         Context context = new Context();
         context.setVariable("greeting", "Hello world!");
-        StaticTemplateExecutor executor = new StaticTemplateExecutor(context, templateMode);
+        StandardMessageResolver messageResolver = new StandardMessageResolver();
+        StaticTemplateExecutor executor = new StaticTemplateExecutor(context, messageResolver, templateMode);
         String result = executor.processTemplateCode(simpleTemplate);
         assertEquals(result, expected);
     }

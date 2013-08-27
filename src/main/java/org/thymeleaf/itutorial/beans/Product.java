@@ -7,7 +7,6 @@ public class Product {
     private String description;
     private Integer price;
     private Date availableFrom;
-
     
     public Product(final String description, final Integer price, final Date availableFrom) {
         this.description = description;

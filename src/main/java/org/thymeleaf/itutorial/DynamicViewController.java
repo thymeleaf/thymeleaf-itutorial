@@ -25,6 +25,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,23 +36,30 @@ import org.thymeleaf.exceptions.TemplateProcessingException;
 public class DynamicViewController {
     
     @Autowired private ServletContext servletContext;
+    @Autowired private MessageSource messageSource;
 
     @RequestMapping(value = "/dynamicView", method = RequestMethod.POST)
-    public void dynamicView(@RequestParam("code") String code, HttpServletRequest request, HttpServletResponse response, Locale locale) throws IOException {
+    public void dynamicView(
+            @RequestParam("code") final String code,
+            final HttpServletRequest request, final HttpServletResponse response,
+            final Locale locale) throws IOException {
         String result = generateCodeOrError(request, response, servletContext, locale, code);
+        response.setContentType("text/html");
+        response.setCharacterEncoding("utf-8");
         response.getWriter().print(result);
     }
 
-    private String generateCodeOrError(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext, Locale locale, String code) {
+    private String generateCodeOrError(final HttpServletRequest request, final HttpServletResponse response, 
+            final ServletContext servletContext,  final Locale locale, final String code) {
         try {
-            TemplateExecutor templateExecutor = new TemplateExecutor(request, response, servletContext, locale);
+            TemplateExecutor templateExecutor = new TemplateExecutor(request, response, servletContext, messageSource, locale);
             return templateExecutor.generateCode(code);
         } catch (TemplateProcessingException ex) {
             return formatErrorMessage(ex);
         }
     }
     
-    private String formatErrorMessage(TemplateProcessingException ex) {
+    private String formatErrorMessage(final TemplateProcessingException ex) {
         StringBuilder sb = new StringBuilder();
         sb.append("<h1>Error</h1>");
         if (ex.getCause() != null && ex.getCause().getMessage() != null) {

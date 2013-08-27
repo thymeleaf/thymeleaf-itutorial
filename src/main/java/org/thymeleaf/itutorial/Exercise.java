@@ -39,13 +39,13 @@ public enum Exercise {
     private String path;
     private String description;
 
-    private Exercise(String path, String description) {
+    private Exercise(final String path, final String description) {
         this.path = path;
         this.description = description;
     }
 
     /** Get Exercise with provided index. */
-    public static Exercise get(int index) {
+    public static Exercise get(final int index) {
         for (Exercise exercise : values()) {
             if (index == exercise.ordinal() + 1) {
                 return exercise;

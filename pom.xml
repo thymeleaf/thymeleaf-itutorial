@@ -43,9 +43,9 @@
     </organization>
   
     <scm>
-      <url>scm:git:git@github.com:thymeleaf/thymeleaf-itutorial.git</url>
-      <connection>scm:git:git@github.com:thymeleaf/thymeleaf-itutorial.git</connection>
-      <developerConnection>scm:git:git@github.com:thymeleaf/thymeleaf-itutorial.git</developerConnection>
+        <url>scm:git:git@github.com:thymeleaf/thymeleaf-itutorial.git</url>
+        <connection>scm:git:git@github.com:thymeleaf/thymeleaf-itutorial.git</connection>
+        <developerConnection>scm:git:git@github.com:thymeleaf/thymeleaf-itutorial.git</developerConnection>
     </scm>
   
     <developers>
@@ -62,41 +62,41 @@
             <name>Daniel Fernandez</name>
             <email>daniel.fernandez AT 11thlabs DOT org</email>
             <roles>
-              <role>Project admin</role>
+                <role>Project admin</role>
             </roles>
         </developer>
     </developers>
   
 
     <distributionManagement>
-      <snapshotRepository>
-        <id>sonatype-nexus-snapshots</id>
-        <name>Sonatype Nexus Snapshots</name>
-        <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-      </snapshotRepository>
-      <repository>
-        <id>sonatype-nexus-snapshots</id>
-        <name>Sonatype Nexus Snapshots</name>
-        <url>http://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-      </repository>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>http://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
     </distributionManagement>
 
     <repositories>
-      <repository>
-        <id>sonatype-nexus-snapshots</id>
-        <name>Sonatype Nexus Snapshots</name>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        <snapshots>
-          <enabled>true</enabled>
-        </snapshots>
-      </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <springframework.version>3.1.2.RELEASE</springframework.version>
-        <thymeleaf.version>2.0.16</thymeleaf.version>
+        <springframework.version>3.1.4.RELEASE</springframework.version>
+        <thymeleaf.version>2.0.18</thymeleaf.version>
     </properties>
 
     <build>
@@ -132,18 +132,18 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>3.1</version>
                 <configuration>
                     <source>1.5</source>
                     <target>1.5</target>
                     <debug>false</debug>
                 </configuration>
             </plugin>
-      
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>2.5</version>
+                <version>2.6</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
@@ -187,7 +187,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
-                        <version>2.2.2</version>
+                        <version>2.4</version>
                         <executions>
                             <execution>
                                 <id>make-assembly-dist</id>
@@ -251,21 +251,21 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.6.1</version>
+            <version>1.7.5</version>
             <scope>compile</scope>
         </dependency>
         
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>1.6.1</version>
+            <version>1.7.5</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.15</version>
+            <version>1.2.17</version>
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
@@ -286,7 +286,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>4.11</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

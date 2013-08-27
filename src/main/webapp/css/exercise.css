@@ -7,6 +7,7 @@ body { height: 100%; }
 #leftcol, #rightcol { width: 49%; height: 100%; }
 #leftcol { float: left; }
 #rightcol { float: right; }
+#editor, #generated-source { white-space: pre; } /* Fix for IE8 */
 #editor, #static-view, #generated-source, #dynamic-view { width: 100%; height: 46%; }
 
 /* Header */

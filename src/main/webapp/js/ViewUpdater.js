@@ -5,18 +5,19 @@ function ViewUpdater(EDITOR, GENERATED_SOURCE, staticViewId, dynamicViewId, CONT
     
     this.updateAll = function () {
         var code = EDITOR.getCode();
-        showStaticView(code);
-        showDynamicView(code);
-        showGeneratedSource(code);
+        var locale = $('#locale').val();
+        showStaticView(code, locale);
+        showGeneratedSource(code, locale);
+        showDynamicView(code, locale);
     }
 
-    function showStaticView(code) {
-        postCodeToIframe(code, CONTEXT_PATH + 'e/c/h/o', staticViewId);
+    function showStaticView(code, locale) {
+        postCodeToIframe(code, locale, CONTEXT_PATH + 'e/c/h/o', staticViewId);
     }
 
-    function showGeneratedSource(code) {
+    function showGeneratedSource(code, locale) {
         var url = CONTEXT_PATH + 'generatedSource';
-        var data = { 'code' : code }
+        var data = { 'code' : code, 'locale' : locale }
         $.ajax({
             url: url,
             type: 'POST',
@@ -30,11 +31,11 @@ function ViewUpdater(EDITOR, GENERATED_SOURCE, staticViewId, dynamicViewId, CONT
         GENERATED_SOURCE.setCode(code);
     }
 
-    function showDynamicView(code) {
-        postCodeToIframe(code, CONTEXT_PATH + 'dynamicView', dynamicViewId);
+    function showDynamicView(code, locale) {
+        postCodeToIframe(code, locale, CONTEXT_PATH + 'dynamicView', dynamicViewId);
     }
     
-    function postCodeToIframe(code, url, iframeId) {
+    function postCodeToIframe(code, locale, url, iframeId) {
         var frameName = iframeId;
         var frameRef = '#' + iframeId;
         var form = $('<form />', {
@@ -42,12 +43,18 @@ function ViewUpdater(EDITOR, GENERATED_SOURCE, staticViewId, dynamicViewId, CONT
             method : 'post',
             target : frameName
         });
-        var input = $('<input />', {
+        var codeInput = $('<input />', {
             type : 'hidden',
             name : 'code',
             value : code
         });
-        form.append(input);
+        form.append(codeInput);
+        var localeInput = $('<input />', {
+            type : 'hidden',
+            name : 'locale',
+            value : locale
+        });
+        form.append(localeInput);
         form.appendTo(frameRef);
         form.submit();
     }

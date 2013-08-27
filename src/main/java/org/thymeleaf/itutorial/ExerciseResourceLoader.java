@@ -32,17 +32,17 @@ public class ExerciseResourceLoader {
     private ServletContext context;
     private Exercise exercise;
 
-    public ExerciseResourceLoader(ServletContext context, Exercise exercise) {
+    public ExerciseResourceLoader(final ServletContext context, final Exercise exercise) {
         this.context = context;
         this.exercise = exercise;
     }
     
-    public InputStream getResourceAsStream(String resource) {
+    public InputStream getResourceAsStream(final String resource) {
         String resourcePath = TEMPLATE_DIR + "/" + exercise.getPath() + "/" + resource;
         return context.getResourceAsStream(resourcePath);
     }
 
-    public String getResource(String resource, String charset) throws IOException {
+    public String getResource(final String resource, final String charset) throws IOException {
         InputStream resourceStream = getResourceAsStream(resource);
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         FileCopyUtils.copy(resourceStream, outputStream);

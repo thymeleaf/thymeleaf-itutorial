@@ -37,10 +37,10 @@ public class CodeController {
 
     @RequestMapping(value = "/resources/{type}/{resource}.{extension}", method = RequestMethod.GET)
     public void code(
-            @PathVariable("type") String type,
-            @PathVariable("resource") String resource,
-            @PathVariable("extension") String extension,
-            HttpServletResponse response) throws IOException {
+            @PathVariable("type") final String type,
+            @PathVariable("resource") final String resource,
+            @PathVariable("extension") final String extension,
+            final HttpServletResponse response) throws IOException {
         String resourcePath = "/WEB-INF/" + type + "/" + resource + "." + extension;
         InputStream resourceStream = servletContext.getResourceAsStream(resourcePath);
         response.setContentType("text/plain");

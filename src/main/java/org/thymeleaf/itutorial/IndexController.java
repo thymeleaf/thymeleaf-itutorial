@@ -30,13 +30,13 @@ public class IndexController {
     @Autowired private String thymeleafVersion;
     
     @RequestMapping("/")
-    public String index(Model model) {
+    public String index(final Model model) {
         model.addAttribute("thymeleafVersion", thymeleafVersion);
         model.addAttribute("exercises", Exercise.values());
         return "index.html";
     }
 
-    /*
+/*
     @RequestMapping("/templates/exercise11/product.html")
     public String product(@RequestParam("action") String action, Model model) {
         setModelBeans(model);

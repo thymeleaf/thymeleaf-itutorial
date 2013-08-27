@@ -36,7 +36,7 @@ public class ShowAnswerController {
     @Autowired private ServletContext servletContext;
     
     @RequestMapping(value = "/showSolution/{index}", method = RequestMethod.GET)
-    public void showSolution(@PathVariable("index") Integer index, OutputStream response) throws IOException {
+    public void showSolution(@PathVariable("index") final Integer index, final OutputStream response) throws IOException {
         Exercise exercise = Exercise.get(index);
         InputStream template = new ExerciseResourceLoader(servletContext, exercise).getResourceAsStream("solution.html");
         FileCopyUtils.copy(template, response);

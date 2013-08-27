@@ -30,7 +30,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class EchoController {
 
     @RequestMapping(value = "/e/c/h/o", method = RequestMethod.POST) // The extra slashes are a trick to allow CSS static prototyping work
-    public void echo(@RequestParam("code") String code, HttpServletResponse response) throws IOException {
+    public void echo(
+            @RequestParam("code") final String code, final HttpServletResponse response) throws IOException {
+        response.setContentType("text/html");
+        response.setCharacterEncoding("utf-8");
         response.getWriter().print(code);
     }
 }

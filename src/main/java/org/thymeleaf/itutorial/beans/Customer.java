@@ -11,7 +11,6 @@ public class Customer {
     private Gender gender;
     private PaymentMethod paymentMethod;
     private int balance;
-
     
     public Customer() {
         super();
