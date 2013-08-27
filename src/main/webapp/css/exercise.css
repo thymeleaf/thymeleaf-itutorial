@@ -29,6 +29,8 @@ footer { clear: both; background-color: #cce699; text-align: right; font-size: 0
 /* Buttons */
 nav a { text-decoration: none; color: #5c7a1f; font-size: 0.8em; padding: 0 3px 0 3px; border: solid 1px #5c7a1f; border-radius: 4px; }
 nav a:hover { color: white; background-color: #5c7a1f; }
+span.modelAttribute span, span.modelAttribute a { font-size: 1em; font-weight: bold; color: brown; border: none; }
+span.modelAttribute a:hover { color: white; background-color: burlywood; }
 
 /* Dialogs */
 #instructions, #about { font-size: 0.8em; }

@@ -43,7 +43,6 @@ public class ExerciseController {
         model.addAttribute("question", question);
         model.addAttribute("exercise", exercise);
         model.addAttribute("thymeleafVersion", thymeleafVersion);
-        model.addAttribute("i18nExercise", index == 4);
         return "exercise.html";
     }
 }

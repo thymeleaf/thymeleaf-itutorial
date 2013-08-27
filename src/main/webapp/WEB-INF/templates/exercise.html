@@ -74,6 +74,14 @@
                 <a href="javascript:INSTRUCTIONS.toggle()">Instructions</a>
                 <a th:href="'javascript:CODE_DIALOG.show(\'templates/__${exercise.path}__/solution.html\')'">Show solution</a>
                 <a href="javascript:SOLUTION.apply()">Apply solution</a>
+                <span th:if="${exercise.hasAttributes()}">Model attributes:</span>
+                <span th:each="attribute : ${exercise.attributes}" class="modelAttribute" >
+                   <a th:if="${attribute.javaClass}"
+                      th:href="'javascript:CODE_DIALOG.show(\'code/__${attribute.javaClass}__\')'"
+                      th:text="${attribute.name}">productList</a>
+                   <span th:unless="${attribute.javaClass}"
+                      th:text="${attribute.name}">productList</span>
+                </span>
             </nav>
             <div id="editor"></div>
             <h2>Static view</h2>
@@ -81,7 +89,7 @@
         </div>
         <div id="rightcol">
             <h2>Generated source</h2>
-            <nav th:if="${i18nExercise}">
+            <nav th:if="${exercise.i18nExercise}">
                 <span>Language:</span>
                 <select id="locale" onchange="VIEW_UPDATER.updateAll()">
                     <option value="en">English</option>

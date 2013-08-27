@@ -19,29 +19,39 @@
  */
 package org.thymeleaf.itutorial;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import static org.thymeleaf.itutorial.ModelAttribute.*;
+
 public enum Exercise {
     
-    EXERCISE01("exercise01", "Exercise 1: bean values"),
-    EXERCISE02("exercise02", "Exercise 2: simple formatting"),
-    EXERCISE03("exercise03", "Exercise 3: string concatenation"),
-    EXERCISE04("exercise04", "Exercise 4: internationalization"),
-    EXERCISE05("exercise05", "Exercise 5: escaped and unescaped text"),
-    EXERCISE06("exercise06", "Exercise 6: iteration"),
-    EXERCISE07("exercise07", "Exercise 7: iteration stats"),
-    EXERCISE08("exercise08", "Exercise 8: conditions"),
-    EXERCISE09("exercise09", "Exercise 9: more on conditions"),
-    EXERCISE10("exercise10", "Exercise 10: Spring expression language");
-//    EXERCISE11("exercise11", "Exercise 11: links"),
-//    EXERCISE12("exercise12", "Exercise 12: forms"),
-//    EXERCISE13("exercise13", "Exercise 13: inlining"),
-//    EXERCISE14("exercise14", "Exercise 14: fragments");
+    EXERCISE01("exercise01", "Exercise 1: bean values", false, Arrays.asList(PRODUCT)),
+    EXERCISE02("exercise02", "Exercise 2: simple formatting", false, Arrays.asList(PRODUCT)),
+    EXERCISE03("exercise03", "Exercise 3: string concatenation", false, Arrays.asList(PRODUCT)),
+    EXERCISE04("exercise04", "Exercise 4: internationalization", true, new ArrayList()),
+    EXERCISE05("exercise05", "Exercise 5: escaped and unescaped text", false, Arrays.asList(HTML)),
+    EXERCISE06("exercise06", "Exercise 6: iteration", false, Arrays.asList(PRODUCT_LIST)),
+    EXERCISE07("exercise07", "Exercise 7: iteration stats", false, Arrays.asList(PRODUCT_LIST)),
+    EXERCISE08("exercise08", "Exercise 8: conditions", false, Arrays.asList(PRODUCT_LIST)),
+    EXERCISE09("exercise09", "Exercise 9: more on conditions", false, Arrays.asList(CUSTOMER_LIST, GENDER, PAYMENT_METHOD)),
+    EXERCISE10("exercise10", "Exercise 10: Spring expression language", false, new ArrayList());
+//    EXERCISE11("exercise11", "Exercise 11: links", false),
+//    EXERCISE12("exercise12", "Exercise 12: forms", false),
+//    EXERCISE13("exercise13", "Exercise 13: inlining", false),
+//    EXERCISE14("exercise14", "Exercise 14: fragments", false);
 
     private String path;
     private String description;
+    private boolean i18nExercise;
+    private List<ModelAttribute> attributes;
 
-    private Exercise(final String path, final String description) {
+    private Exercise(final String path, final String description, final boolean i18nExercise,
+            final List<ModelAttribute> attributes) {
         this.path = path;
         this.description = description;
+        this.i18nExercise = i18nExercise;
+        this.attributes = attributes;
     }
 
     /** Get Exercise with provided index. */
@@ -60,6 +70,18 @@ public enum Exercise {
 
     public String getDescription() {
         return description;
+    }
+
+    public boolean isI18nExercise() {
+        return i18nExercise;
+    }
+
+    public List<ModelAttribute> getAttributes() {
+        return attributes;
+    }
+    
+    public boolean hasAttributes() {
+        return attributes != null && !attributes.isEmpty();
     }
 
     public int getIndex() {
