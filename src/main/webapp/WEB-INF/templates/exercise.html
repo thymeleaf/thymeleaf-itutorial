@@ -72,13 +72,8 @@
             <h2>Source code</h2>
             <nav>
                 <a href="javascript:INSTRUCTIONS.toggle()">Instructions</a>
-                <a href="javascript:SOLUTION.show();">Show solution</a>
-                <select th:if="${i18nExercise}"
-                        id="locale" onchange="VIEW_UPDATER.updateAll()">
-                    <option value="en">English</option>
-                    <option value="es">Spanish</option>
-                    <option value="fr">French</option>
-                </select>
+                <a th:href="'javascript:CODE_DIALOG.show(\'templates/__${exercise.path}__/solution.html\')'">Show solution</a>
+                <a href="javascript:SOLUTION.apply()">Apply solution</a>
             </nav>
             <div id="editor"></div>
             <h2>Static view</h2>
@@ -86,6 +81,14 @@
         </div>
         <div id="rightcol">
             <h2>Generated source</h2>
+            <nav th:if="${i18nExercise}">
+                <span>Language:</span>
+                <select id="locale" onchange="VIEW_UPDATER.updateAll()">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                </select>
+            </nav>
             <div id="generated-source"></div>
             <h2>Dynamic view</h2>
             <iframe id="dynamic-view" name="dynamic-view"></iframe>

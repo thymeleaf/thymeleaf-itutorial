@@ -24,10 +24,14 @@ function CodeDialog(CONTEXT_PATH) {
     function loadCode() {
         div = $('<div />');
         div.attr('id', DIALOG_ID);
-        $(div).load(url, '', showDialog);
+        $.ajax({
+            url: url,
+            dataType: 'html',
+            success : showDialog
+        });
     }
 
-    function showDialog() {
+    function showDialog(data) {
         $(div).dialog({
             width: '600',
             height: '500',
@@ -36,6 +40,7 @@ function CodeDialog(CONTEXT_PATH) {
         });
         editor = new Editor(DIALOG_ID);
         editor.setLanguage(language);
+        editor.setCode(data);
         editor.makeReadOnly();
     }
     

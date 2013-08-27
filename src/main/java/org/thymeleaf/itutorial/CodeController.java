@@ -22,29 +22,42 @@ package org.thymeleaf.itutorial;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class CodeController {
-    
+
     @Autowired private ServletContext servletContext;
 
-    @RequestMapping(value = "/resources/{type}/{resource}.{extension}", method = RequestMethod.GET)
-    public void code(
-            @PathVariable("type") final String type,
-            @PathVariable("resource") final String resource,
-            @PathVariable("extension") final String extension,
-            final HttpServletResponse response) throws IOException {
-        String resourcePath = "/WEB-INF/" + type + "/" + resource + "." + extension;
-        InputStream resourceStream = servletContext.getResourceAsStream(resourcePath);
-        response.setContentType("text/plain");
+    @RequestMapping(value = "/resources/**", method = RequestMethod.GET)
+    public void code(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        String servletPath = request.getServletPath();
+        InputStream resourceStream = servletContext.getResourceAsStream(resourcePath(servletPath));
+        response.setContentType(mimeType(servletPath));
         response.setCharacterEncoding("utf-8");
         FileCopyUtils.copy(resourceStream, response.getOutputStream());
+    }
+
+    public String resourcePath(final String servletPath) {
+        int firstSlash = servletPath.indexOf('/');
+        int secondSlash = servletPath.indexOf('/', firstSlash + 1);
+        String path = servletPath.substring(secondSlash + 1);
+        return "/WEB-INF/" + path;
+    }
+
+    public String mimeType(final String servletPath) {
+        if (servletPath.endsWith(".html")) {
+            return "text/html";
+        } else if (servletPath.endsWith(".java")) {
+            return "text/x-java";
+        } else {
+            return "text/plain";
+        }
     }
 }

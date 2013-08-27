@@ -3,7 +3,7 @@
  */
 function Solution(CONTEXT_PATH, EXERCISE, EDITOR, callback) {
 
-    this.show = function() {
+    this.apply = function() {
         var url = CONTEXT_PATH + 'showSolution/' + EXERCISE;
         $.ajax({
             url: url,
