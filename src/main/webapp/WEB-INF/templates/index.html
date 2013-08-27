@@ -58,6 +58,7 @@
                 <a href="exercise.html"
                    th:href="@{/exercise/__${exercise.index}__}"
                    th:text="${exercise.description}">Exercise 1: bean values</a>
+                <b th:if="${exerciseStat.index == 0}">&larr; Start here!</b>
             </li>
         </ul>
         <h2>Further resources</h2>
