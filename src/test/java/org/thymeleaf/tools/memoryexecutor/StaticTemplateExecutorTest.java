@@ -50,6 +50,7 @@ public class StaticTemplateExecutorTest {
             + "</html>";
         String templateMode = StandardTemplateModeHandlers.HTML5.getTemplateModeName();
         WebContext context = new WebContext(new MockHttpServletRequest(), new MockHttpServletResponse(), new MockServletContext());        context.setVariable("greeting", "Hello world!");
+        context.setVariable("greeting", "Hello world!");
         StandardMessageResolver messageResolver = new StandardMessageResolver();
         StaticTemplateExecutor executor = new StaticTemplateExecutor(context, messageResolver, templateMode);
         String result = executor.processTemplateCode(simpleTemplate);
