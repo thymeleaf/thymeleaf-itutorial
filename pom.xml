@@ -155,7 +155,7 @@
                 <version>1.4.1</version>
                 <executions>
                     <execution>
-                        <phase>package</phase> <!-- FIXME: choose a better phase -->
+                        <phase>prepare-package</phase> <!-- FIXME: choose a better phase -->
                         <goals>
                             <goal>replace</goal>
                         </goals>

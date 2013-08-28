@@ -21,28 +21,31 @@ package org.thymeleaf.itutorial;
 
 public enum ModelAttribute {
 
-    PRODUCT("product", "Product.java"),
-    PRODUCT_LIST("productList", "Product.java"),
+    PRODUCT("product", "code/Product.java"),
+    PRODUCT_LIST("productList", "code/Product.java"),
     HTML("html", null),
     CUSTOMER_NAME("customerName", null),
-    CUSTOMER("customer", "Customer.java"),
-    CUSTOMER_LIST("customerList", "Customer.java"),
-    GENDER("(Gender.java)", "Gender.java"),
-    PAYMENT_METHOD("(PaymentMethod.java)", "PaymentMethod.java");
+    CUSTOMER("customer", "code/Customer.java"),
+    CUSTOMER_LIST("customerList", "code/Customer.java"),
+    GENDER("(Gender.java)", "code/Gender.java"),
+    PAYMENT_METHOD("(PaymentMethod.java)", "code/PaymentMethod.java"),
+    MESSAGES_EN("(messages_en)", "classes/messages_en.properties"),
+    MESSAGES_ES("(messages_es)", "classes/messages_es.properties"),
+    MESSAGES_FR("(messages_fr)", "classes/messages_fr.properties");
 
     private String name;
-    private String javaClass;
+    private String file;
 
-    private ModelAttribute(String name, String javaClass) {
+    private ModelAttribute(String name, String file) {
         this.name = name;
-        this.javaClass = javaClass;
+        this.file = file;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getJavaClass() {
-        return javaClass;
+    public String getFile() {
+        return file;
     }
 }

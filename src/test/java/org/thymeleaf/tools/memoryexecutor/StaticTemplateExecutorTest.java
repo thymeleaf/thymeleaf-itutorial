@@ -17,10 +17,7 @@ package org.thymeleaf.tools.memoryexecutor;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockHttpServletResponse;
-import org.springframework.mock.web.MockServletContext;
-import org.thymeleaf.context.WebContext;
+import org.thymeleaf.context.Context;
 import org.thymeleaf.messageresolver.StandardMessageResolver;
 import org.thymeleaf.templatemode.StandardTemplateModeHandlers;
 
@@ -49,7 +46,7 @@ public class StaticTemplateExecutorTest {
             + "    </body>"
             + "</html>";
         String templateMode = StandardTemplateModeHandlers.HTML5.getTemplateModeName();
-        WebContext context = new WebContext(new MockHttpServletRequest(), new MockHttpServletResponse(), new MockServletContext());        context.setVariable("greeting", "Hello world!");
+        Context context = new Context();
         context.setVariable("greeting", "Hello world!");
         StandardMessageResolver messageResolver = new StandardMessageResolver();
         StaticTemplateExecutor executor = new StaticTemplateExecutor(context, messageResolver, templateMode);

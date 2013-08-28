@@ -12,7 +12,7 @@ body { height: 100%; }
 
 /* Header */
 header { margin-bottom: 4px; }
-header h1 { display: inline; font-size: 1.1em; background: #cce699 url('../logo.png') no-repeat left center; padding-left: 114px; }
+header h1 { display: inline; font-size: 1.1em; background: #cce699 url('../images/logo.png') no-repeat left center; padding-left: 114px; }
 header span { color: #5c7a1f; }
 header nav { display: inline; float: right; }
 
@@ -27,9 +27,24 @@ nav span { font-size: 0.8em; color: #5c7a1f; }
 footer { clear: both; background-color: #cce699; text-align: right; font-size: 0.8em; }
 
 /* Buttons */
-nav a { text-decoration: none; color: #5c7a1f; font-size: 0.8em; padding: 0 3px 0 3px; border: solid 1px #5c7a1f; border-radius: 4px; }
-nav a:hover { color: white; background-color: #5c7a1f; }
-span.modelAttribute span, span.modelAttribute a { font-size: 1em; font-weight: bold; color: brown; border: none; }
+#previous-button, #index-button, #next-button, #about-button, #show-instructions, #show-solution, #apply-solution { 
+    display: inline-block; padding: 1px; margin-bottom: -2px; width: 18px; text-indent: -1000px; overflow: hidden; 
+    background-color: #d6ebad; border-radius: 4px;
+    background-repeat: no-repeat; background-position: center center; 
+}
+#previous-button:hover, #index-button:hover, #next-button:hover, #about-button:hover, #show-instructions:hover, 
+#show-solution:hover, #apply-solution:hover { 
+    background-color: #5c7a1f; 
+}
+#previous-button { background-image: url('../images/back.png'); }
+#index-button { background-image: url('../images/eject.png'); }
+#next-button { background-image: url('../images/forward.png'); }
+#about-button { background-image: url('../images/information.png'); }
+#show-instructions { background-image: url('../images/help.png'); }
+#show-solution { background-image: url('../images/lightbulb.png'); }
+#apply-solution { background-image: url('../images/lightning.png'); }
+
+span.modelAttribute span, span.modelAttribute a { font-size: 1em; font-weight: bold; text-decoration: none; color: brown; }
 span.modelAttribute a:hover { color: white; background-color: burlywood; }
 
 /* Dialogs */

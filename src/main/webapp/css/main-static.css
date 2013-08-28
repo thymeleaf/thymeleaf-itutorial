@@ -30,7 +30,7 @@ a {
 }
 
 ul {
-    list-style-image: url('bullet.png');
+    list-style-image: url('images/bullet.png');
 }
 
 a.back, a.next {
@@ -43,13 +43,13 @@ a.back, a.next {
 }
 
 a.back {
-    background-image: url('back.png');
+    background-image: url('images/back.png');
     background-position: 2% center;
     padding: 4px 6px 4px 20px;
 }
 
 a.next {
-    background-image: url('forward.png');
+    background-image: url('images/forward.png');
     background-position: 98% center;
     padding: 4px 20px 4px 6px;
 }

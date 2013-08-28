@@ -48,14 +48,15 @@
             <span th:text="${exercise.description}">Exercise 1: bean values</span>
             <nav>
                 <a th:if="${exercise.previous}"
-                   href="exercise.html"
-                   th:href="@{/exercise/__${exercise.previous.index}__}">Previous</a>
-                <a href="index.html"
-                   th:href="@{/}">Index</a>
+                   id="previous-button" title="Previous exercise"
+                   href="exercise.html" th:href="@{/exercise/__${exercise.previous.index}__}">Previous</a>
+                <a id="index-button" title="Back to index" 
+                   href="index.html" th:href="@{/}">Index</a>
                 <a th:if="${exercise.next}"
-                   href="exercise.html"
-                   th:href="@{/exercise/__${exercise.next.index}__}">Next</a>
-                <a href="javascript:ABOUT.toggle()">About</a>
+                   id="next-button" title="Next exercise"
+                   href="exercise.html" th:href="@{/exercise/__${exercise.next.index}__}">Next</a>
+                <a id="about-button" title="About the Thymeleaf Tutorial"
+                   href="javascript:ABOUT.toggle()">About</a>
             </nav>
         </header>
         <div id="instructions"
@@ -71,15 +72,17 @@
         <div id="leftcol">
             <h2>Source code</h2>
             <nav>
-                <a href="javascript:INSTRUCTIONS.toggle()">Instructions</a>
-                <a th:href="'javascript:CODE_DIALOG.show(\'templates/__${exercise.path}__/solution.html\')'">Show solution</a>
-                <a href="javascript:SOLUTION.apply()">Apply solution</a>
-                <span th:if="${exercise.hasAttributes()}">Model attributes:</span>
+                <a id="show-instructions" href="javascript:INSTRUCTIONS.toggle()" title="Instructions">Instructions</a>
+                <a id="show-solution"
+                   th:href="'javascript:CODE_DIALOG.show(\'templates/__${exercise.path}__/solution.html\')'"
+                   title="Show solution">Show solution</a>
+                <a id="apply-solution" href="javascript:SOLUTION.apply()" title="Apply solution">Apply solution</a>
+                <span th:if="${exercise.hasAttributes()}">Use:</span>
                 <span th:each="attribute : ${exercise.attributes}" class="modelAttribute" >
-                   <a th:if="${attribute.javaClass}"
-                      th:href="'javascript:CODE_DIALOG.show(\'code/__${attribute.javaClass}__\')'"
+                   <a th:if="${attribute.file}"
+                      th:href="'javascript:CODE_DIALOG.show(\'__${attribute.file}__\')'"
                       th:text="${attribute.name}">productList</a>
-                   <span th:unless="${attribute.javaClass}"
+                   <span th:unless="${attribute.file}"
                       th:text="${attribute.name}">productList</span>
                 </span>
             </nav>

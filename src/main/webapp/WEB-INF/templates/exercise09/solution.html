@@ -23,8 +23,8 @@
                     <td th:text="${customer.firstName}">Peter</td>
                     <td th:text="${customer.lastName}">Jackson</td>
                     <td th:switch="${customer.gender?.name()}">
-                        <img th:case="'MALE'" src="../../../male.png" th:src="@{/male.png}" alt="Male" />
-                        <img th:case="'FEMALE'" src="../../../female.png" th:src="@{/female.png}" alt="Female" />
+                        <img th:case="'MALE'" src="../../../images/male.png" th:src="@{/images/male.png}" alt="Male" />
+                        <img th:case="'FEMALE'" src="../../../images/female.png" th:src="@{/images/female.png}" alt="Female" />
                         <span th:case="*">Unknown</span>
                     </td>
                     <td>
@@ -38,14 +38,14 @@
                 <tr>
                     <td>Mary</td>
                     <td>Johanson</td>
-                    <td><img src="../../../female.png" /></td>
+                    <td><img src="../../../images/female.png" /></td>
                     <td><span>Credit card</span></td>
                     <td>5000</td>
                 </tr>
                 <tr>
                     <td>Robert</td>
                     <td>Allen</td>
-                    <td><img src="../../../male.png" /></td>
+                    <td><img src="../../../images/male.png" /></td>
                     <td>
                         <span>Credit card</span>
                         <span class="warn">Payment must be done in the next 4 days</span>

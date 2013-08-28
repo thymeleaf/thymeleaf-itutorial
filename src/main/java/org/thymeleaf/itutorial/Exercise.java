@@ -29,7 +29,7 @@ public enum Exercise {
     EXERCISE01("exercise01", "Exercise 1: bean values", false, Arrays.asList(PRODUCT)),
     EXERCISE02("exercise02", "Exercise 2: simple formatting", false, Arrays.asList(PRODUCT)),
     EXERCISE03("exercise03", "Exercise 3: string concatenation", false, Arrays.asList(PRODUCT)),
-    EXERCISE04("exercise04", "Exercise 4: internationalization", true, new ArrayList()),
+    EXERCISE04("exercise04", "Exercise 4: internationalization", true, Arrays.asList(MESSAGES_EN, MESSAGES_ES, MESSAGES_FR)),
     EXERCISE05("exercise05", "Exercise 5: escaped and unescaped text", false, Arrays.asList(HTML)),
     EXERCISE06("exercise06", "Exercise 6: iteration", false, Arrays.asList(PRODUCT_LIST)),
     EXERCISE07("exercise07", "Exercise 7: iteration stats", false, Arrays.asList(PRODUCT_LIST)),
