@@ -35,6 +35,7 @@ function CodeDialog(CONTEXT_PATH) {
         $(div).dialog({
             width: '600',
             height: '500',
+            dialogClass: 'dialog',
             title: title,
             close : clearResources
         });
