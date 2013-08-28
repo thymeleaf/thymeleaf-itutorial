@@ -3,6 +3,12 @@ body {
     padding: 0 1em 1em 1em;
 }
 
+/* Layout */
+html, body { margin: 3px; padding: 0; }
+#leftcol, #rightcol { width: 49%; height: 100%; }
+#leftcol { float: left; }
+#rightcol { float: right; }
+
 h1, h2, h3 {
     padding: 0.2em;
 }
@@ -17,6 +23,16 @@ h2 {
 
 h3 {
     font-size: 1.1em;
+}
+
+#intro {
+    color: #5c7a1f;
+    font-style: italic;
+    margin: 0 0 0 0.5em;
+}
+
+footer {
+    clear: both;
 }
 
 h3.footer {
