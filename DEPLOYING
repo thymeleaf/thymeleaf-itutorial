@@ -2,4 +2,4 @@ To GoogleAppEngine:
 	appcfg.sh update target/thymeleaf-itutorial
 
 To CloudFoundry:
-	cf push --path target/thymeleaf-itutorial.war
+	cf push 

@@ -1,0 +1,8 @@
+---
+applications:
+- name: thymeleaf-itutorial
+  memory: 512M
+  instances: 1
+  host: thymeleaf-itutorial
+  domain: cfapps.io
+  path: target/thymeleaf-itutorial.war
