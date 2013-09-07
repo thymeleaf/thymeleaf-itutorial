@@ -24,10 +24,12 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.context.MessageSource;
+import org.springframework.web.servlet.support.RequestContext;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.itutorial.beans.Gender;
 import org.thymeleaf.itutorial.beans.PaymentMethod;
 import org.thymeleaf.spring3.messageresolver.SpringMessageResolver;
+import org.thymeleaf.spring3.naming.SpringContextVariableNames;
 import org.thymeleaf.templatemode.StandardTemplateModeHandlers;
 import org.thymeleaf.tools.memoryexecutor.StaticTemplateExecutor;
 
@@ -39,6 +41,8 @@ public class TemplateExecutor {
             final HttpServletRequest request, final HttpServletResponse response, 
             final ServletContext servletContext, final MessageSource messageSource, final Locale locale) {
         WebContext context = new WebContext(request, response, servletContext);
+        RequestContext requestContext = new RequestContext(request, servletContext);
+        context.setVariable(SpringContextVariableNames.SPRING_REQUEST_CONTEXT, requestContext);
         context.setLocale(locale);
         context.setVariable("product", DAO.loadProduct());
         context.setVariable("productList", DAO.loadAllProducts());

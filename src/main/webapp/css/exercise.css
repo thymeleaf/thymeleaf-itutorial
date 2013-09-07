@@ -28,7 +28,7 @@ footer { clear: both; background-color: #cce699; text-align: right; font-size: 0
 
 /* Buttons */
 #previous-button, #index-button, #next-button, #about-button, #show-instructions, #show-solution, #apply-solution { 
-    display: inline-block; padding: 1px; margin-bottom: -2px; width: 18px; text-indent: -1000px; overflow: hidden; 
+    display: inline-block; padding: 1px; margin-bottom: -6px; width: 18px; text-indent: -1000px; overflow: hidden; 
     background-color: #d6ebad; border-radius: 4px;
     background-repeat: no-repeat; background-position: center center; 
 }
