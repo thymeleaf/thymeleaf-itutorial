@@ -42,7 +42,7 @@ public class TemplateExecutor {
             final ServletContext servletContext, final MessageSource messageSource, final Locale locale) {
         WebContext context = new WebContext(request, response, servletContext);
         RequestContext requestContext = new RequestContext(request, servletContext);
-        context.setVariable(SpringContextVariableNames.SPRING_REQUEST_CONTEXT, requestContext);
+        context.setVariable(SpringContextVariableNames.SPRING_REQUEST_CONTEXT, requestContext); // Neccesary to avoid NullPointerException
         context.setLocale(locale);
         context.setVariable("product", DAO.loadProduct());
         context.setVariable("productList", DAO.loadAllProducts());
