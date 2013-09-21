@@ -27,6 +27,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.thymeleaf.itutorial.beans.Customer;
 
 @Controller
 public class ExerciseController {
@@ -44,5 +46,25 @@ public class ExerciseController {
         model.addAttribute("exercise", exercise);
         model.addAttribute("thymeleafVersion", thymeleafVersion);
         return "exercise.html";
+    }
+
+    // Auxiliar mapping for Exercise 11.
+    @RequestMapping("/exercise11/product.html")
+    public String product(@RequestParam("action") String action, Model model) {
+        model.addAttribute("product", DAO.loadProduct());
+        if ("view".equals(action)) {
+            return "/exercise11/viewProduct.html";
+        } else if ("edit".equals(action)) {
+            return "/exercise11/editProduct.html";
+        } else {
+            throw new IllegalArgumentException("Action -" + action +"- not recognized");
+        }
+    }
+
+    // Auxiliar mapping for Exercise 12.
+    @RequestMapping("/exercise12/saveCustomer.html")
+    public String saveCustomer(Customer customer, Model model) {
+        model.addAttribute("customer", customer);
+        return "/exercise12/saveCustomer.html";
     }
 }

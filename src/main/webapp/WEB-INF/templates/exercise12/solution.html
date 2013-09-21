@@ -8,7 +8,7 @@
     <body>
         <h1>Thymeleaf tutorial - Solution for exercise 12: forms</h1>
         <h2>Customer edition</h2>
-        <form action="saveCustomer.html" th:action="@{/templates/exercise12/saveCustomer.html}" th:object="${customer}" method="post">
+        <form action="saveCustomer.html" th:action="@{/exercise12/saveCustomer.html}" th:object="${customer}" method="post">
             <input type="hidden" th:field="*{id}" />
             
             <label for="firstName">First name:</label>

@@ -10,12 +10,13 @@
         <h2>Product edition</h2>
         <form action="#" onsubmit="return false">
             <label for="name">Product name</label>
-            <input type="text" id="name" name="name" value="Red chair" th:value="${product.description}" size="80 "/>
+            <input type="text" id="name" name="name" value="Red chair" th:value="${product.description}" size="40"/>
             <label for="price">Product price</label>
             <input type="text" id="price" name="price" value="350" th:value="${#numbers.formatDecimal(product.price, 1, 2)}" size="8" />
             <label for="available">Available from</label>
             <input type="text" id="available" name="available" value="28-Jun-2013" th:value="${#dates.format(product.availableFrom, 'dd-MMM-yyyy')}" size="15" />
             <input type="submit" />
         </form>
+        <a href="javascript:history.back()">Back</a>
     </body>
 </html>

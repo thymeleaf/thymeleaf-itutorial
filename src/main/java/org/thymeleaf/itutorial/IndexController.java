@@ -32,27 +32,8 @@ public class IndexController {
     @RequestMapping("/")
     public String index(final Model model) {
         model.addAttribute("thymeleafVersion", thymeleafVersion);
-        model.addAttribute("exercises", Exercise.values());
+        model.addAttribute("basicExercises", Exercise.basicExercises());
+        model.addAttribute("twoDotOneExercises", Exercise.twoDotOneExercises());
         return "index.html";
     }
-
-/*
-    @RequestMapping("/templates/exercise11/product.html")
-    public String product(@RequestParam("action") String action, Model model) {
-        setModelBeans(model);
-        if (action.equals("view")) {
-            return "/exercise11/viewProduct.html";
-        } else if (action.equals("edit")) {
-            return "/exercise11/editProduct.html";
-        } else {
-            throw new IllegalArgumentException("Action -" + action +"- not recognized");
-        }
-    }
-    
-    @RequestMapping("/templates/exercise12/saveCustomer.html")
-    public String saveCustomer(Customer customer, Model model) {
-        model.addAttribute("customer", customer);
-        return "/exercise12/saveCustomer.html";
-    }
-*/
 }

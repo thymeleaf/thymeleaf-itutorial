@@ -18,7 +18,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.1em;
+    font-size: 1.0em;
 }
 
 h3.footer {
@@ -102,8 +102,8 @@ td.enhanced {
 
 div.banner {
     width: 112px;
-    height: 140px;
-    border: solid 3px black;
+    height: 60px;
+    border: solid 2px black;
     border-radius: 10px;
     float: right;
     text-align: center;

@@ -59,12 +59,21 @@
         </div>
         <div id="rightcol">
             <h2>Table of contents</h2>
+            <h3>Basic exercises</h3>
             <ul>
-                <li th:each="exercise : ${exercises}">
+                <li th:each="exercise : ${basicExercises}">
                     <a href="exercise.html"
                        th:href="@{/exercise/__${exercise.index}__}"
                        th:text="${exercise.description}">Exercise 1: bean values</a>
                     <b th:if="${exerciseStat.index == 0}">&larr; Start here!</b>
+                </li>
+            </ul>
+            <h3>New in Thymeleaf 2.1</h3>
+            <ul>
+                <li th:each="exercise : ${twoDotOneExercises}">
+                    <a href="exercise.html"
+                       th:href="@{/exercise/__${exercise.index}__}"
+                       th:text="${exercise.description}">Exercise 1: bean values</a>
                 </li>
             </ul>
             <h2>Further resources</h2>

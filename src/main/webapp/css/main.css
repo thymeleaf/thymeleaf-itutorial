@@ -22,7 +22,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.1em;
+    font-size: 1.0em;
 }
 
 #intro {
@@ -116,8 +116,8 @@ td.enhanced {
 
 div.banner {
     width: 112px;
-    height: 140px;
-    border: solid 3px black;
+    height: 60px;
+    border: solid 2px black;
     border-radius: 10px;
     float: right;
     text-align: center;
@@ -132,7 +132,7 @@ div.banner span {
 
 form {
     border: solid 1px lightgray;
-    padding: 2em;
+    padding: 0.5em 1.5em 0.5em 1.5em;
     background-color: #e0f0c2;
 }
 
@@ -145,7 +145,7 @@ input, select {
 }
 
 textarea {
-    height: 20em;
+    height: 14em;
     width: 80%;
 }
 

@@ -35,11 +35,11 @@ public enum Exercise {
     EXERCISE07("exercise07", "Exercise 7: iteration stats", false, Arrays.asList(PRODUCT_LIST)),
     EXERCISE08("exercise08", "Exercise 8: conditions", false, Arrays.asList(PRODUCT_LIST)),
     EXERCISE09("exercise09", "Exercise 9: more on conditions", false, Arrays.asList(CUSTOMER_LIST, GENDER, PAYMENT_METHOD)),
-    EXERCISE10("exercise10", "Exercise 10: Spring expression language", false, new ArrayList());
-//    EXERCISE11("exercise11", "Exercise 11: links", false),
-//    EXERCISE12("exercise12", "Exercise 12: forms", false),
-//    EXERCISE13("exercise13", "Exercise 13: inlining", false),
-//    EXERCISE14("exercise14", "Exercise 14: fragments", false);
+    EXERCISE10("exercise10", "Exercise 10: Spring expression language", false, new ArrayList()),
+    EXERCISE11("exercise11", "Exercise 11: links", false, new ArrayList()),
+    EXERCISE12("exercise12", "Exercise 12: forms", false, Arrays.asList(CUSTOMER, GENDER, PAYMENT_METHOD)),
+    EXERCISE13("exercise13", "Exercise 13: inlining", false, Arrays.asList(CUSTOMER_NAME)),
+    EXERCISE14("exercise14", "Exercise 14: same template fragments", false, new ArrayList());
 
     private String path;
     private String description;
@@ -105,5 +105,18 @@ public enum Exercise {
             return Exercise.get(nextIndex);
         }
         return null;
+    }
+    
+    public static Exercise[] basicExercises() {
+        Exercise[] basicExercises = {
+            EXERCISE01, EXERCISE02, EXERCISE03, EXERCISE04, EXERCISE05, EXERCISE06, EXERCISE07,
+            EXERCISE08, EXERCISE09, EXERCISE10, EXERCISE11, EXERCISE12, EXERCISE13};
+        return basicExercises;
+    }
+
+    public static Exercise[] twoDotOneExercises() {
+        Exercise[] twoDotOneExercises = {
+            EXERCISE14};
+        return twoDotOneExercises;
     }
 }

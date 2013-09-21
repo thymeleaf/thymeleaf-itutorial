@@ -9,11 +9,11 @@
         <h1>Thymeleaf tutorial - Answer for exercise 12: forms</h1>
         <h2>Customer edition</h2>
         <!-- 
-            Set the action to "/templates/exercise12/saveCustomer.html", and use
+            Set the action attribute to "/exercise12/saveCustomer.html", and use
             th:object to bind the ${customer} variable as the form-backing bean. 
         -->
         <form method="post" action="saveCustomer.html">
-            <!-- Set id here -->
+            <!-- Use th:field to set field 'id' here -->
             <input type="hidden" />
             
             <!-- Use th:field to show *{firstName} -->
