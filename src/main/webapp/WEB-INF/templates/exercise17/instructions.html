@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial - Exercise 17: comments</title>
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <p>
+            This exercise features the different types of comments you can use inside
+            a Thymeleaf template. See the relevant 
+            <a href="http://www.thymeleaf.org/whatsnew21.html#plcom"
+               title="Open Thymeleaf manual" target="_blank">sections on comments</a>
+            of the <em>What's New</em> article.
+        </p>
+        <ol>
+            <li>
+                You'll see four sections marked with the literals <kbd>[1]</kbd>, <kbd>[2]</kbd>, <kbd>[3]</kbd>
+                and <kbd>[4]</kbd>.
+            </li>
+            <li>
+                <b>HTML comment</b>: we want text <kbd>[1]</kbd> to be an HTML comment. This comment will be shown
+                in both source and generated code.
+            </li>
+            <li>
+                <b>Thymeleaf comment</b>: we want text <kbd>[2]</kbd> to be a parser-level comment. This comment will
+                be shown in source code but not in generated HTML.
+            </li>
+            <li>
+                <b>Generated-only content</b>: we want section <kbd>[3]</kbd> to be shown when the template is executed
+                but not when it is opened statically.
+            </li>
+            <li>
+                <b>Prototype-only content</b>: we want section <kbd>[4]</kbd> to be shown when the template is opened
+                statically but not when it is executed.
+            </li>
+            <li>
+                You can check the proposed solution by pressing the <b>Show solution</b> button
+                (<img src="../../../images/lightbulb.png" th:src="@{/images/lightbulb.png}" />) above the code editor.
+            </li>
+        </ol>
+    </body>
+</html>

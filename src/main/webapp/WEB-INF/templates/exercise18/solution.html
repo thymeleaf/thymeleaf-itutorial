@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial: exercise 18</title>
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Thymeleaf tutorial - Solution for exercise 18: data-* syntax</h1>
+        <h2>Product list</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Available from</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-th-each="product : ${productList}">
+                    <td data-th-text="${product.description}">Red chair</td>
+                    <td data-th-text="${'$' + #numbers.formatDecimal(product.price, 1, 2)}">$350</td>
+                    <td data-th-text="${#dates.format(product.availableFrom, 'dd-MMM-yyyy')}">28-Jun-2013</td>
+                    <td>
+                        <span data-th-if="${product.price lt 100}" class="offer">Special offer!</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
