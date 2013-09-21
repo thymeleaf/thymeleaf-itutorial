@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial - Exercise 15: parameterizable fragments</title>
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <p>
+            This exercise introduces concepts new in Thymeleaf 2.1. See
+            <a href="http://www.thymeleaf.org/whatsnew21.html#fsig"
+               title="Open Thymeleaf manual" target="_blank">parameterizable fragment signatures section</a>
+            of the <em>What's New</em> article.
+        </p>
+        <ol>
+            <li>
+                Let's start with the same-template fragments from the previous exercise.
+                We have a fragment call <em>banner</em> which is used three times inside the page.
+                We are going to add two parameters to the fragment so as to change the background color and
+                the text shown.
+            </li>
+            <li>
+                The first parameter will be a CSS class with possible values <em>white</em>, <em>red</em> and
+                <em>blue</em>. Substitute the provided value <em>white</em> by a fragment parameter.
+            </li>
+            <li>
+                The second parameter will be the text shown.
+                Substitute the provided value <em>The Thymeleaf tutorial</em> by a fragment parameter.
+            </li>
+            <li>
+                Now the values for the includes must be:
+                <ol>
+                    <li><em>white</em> and <em>Product information</em></li>
+                    <li><em>red</em> and <em>Customer information</em></li>
+                    <li><em>blue</em> and <em>Copyright 2013</em></li>
+                </ol>
+            </li>
+            <li>
+                You can check the proposed solution by pressing the <b>Show solution</b> button
+                (<img src="../../../images/lightbulb.png" th:src="@{/images/lightbulb.png}" />) above the code editor.
+            </li>
+        </ol>
+    </body>
+</html>

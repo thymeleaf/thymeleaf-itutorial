@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Thymeleaf tutorial: exercise 14</title>
+        <title>Thymeleaf tutorial: exercise 15</title>
         <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
         <meta charset="utf-8" />
     </head>
     <body>
-        <h1>Thymeleaf tutorial - Solution for exercise 14: same-template fragments</h1>
-        <div th:fragment="banner" id="bannerElement">
-            <div class="banner">
+        <h1>Thymeleaf tutorial - Solution for exercise 15: parameterizable fragments</h1>
+        <div th:fragment="banner(color, text)" th:remove="all">
+            <div class="banner " th:attrappend="class=${color}">
                 <img src="../../../images/logo.png" th:src="@{/images/logo.png}" alt="Thymeleaf logo" />
-                <span>The Thymeleaf tutorial</span>
+                <span th:text="${text}">The Thymeleaf tutorial</span>
             </div>
         </div>
+        <div th:include="this :: banner('white', 'Product information')">Banner</div>
         <h2>Product information</h2>
         <dl>
             <dt>Product name</dt>
@@ -24,7 +25,7 @@
             <dt>Product available from</dt>
             <dd th:text="${product.availableFrom}">28-Jun-2013</dd>
         </dl>
-        <div th:include="this :: banner">Banner</div>
+        <div th:include="this :: banner('red', 'Customer information')">Banner</div>
         <h2>Customer information</h2>
         <dl>
             <dt>First name</dt>
@@ -42,6 +43,6 @@
             <dt>Balance</dt>
             <dd th:text="'$' + ${customer.balance}">$350</dd>
         </dl>
-        <div th:include="this :: [//div[@id='bannerElement']]">Banner</div>
+        <div th:include="this :: banner('blue', 'Copyright 2013')">Banner</div>
     </body>
 </html>

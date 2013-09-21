@@ -154,3 +154,15 @@ p.label {
 p.answer {
     text-indent: 3em;
 }
+
+div.white {
+    background-color: white;
+}
+
+div.red {
+    background-color: #cd0a0a;
+}
+
+div.blue {
+    background-color: cadetblue;
+}
