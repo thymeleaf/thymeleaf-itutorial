@@ -40,7 +40,8 @@ public enum Exercise {
     EXERCISE12("exercise12", "Exercise 12: forms", false, Arrays.asList(CUSTOMER, GENDER, PAYMENT_METHOD)),
     EXERCISE13("exercise13", "Exercise 13: inlining", false, Arrays.asList(CUSTOMER_NAME)),
     EXERCISE14("exercise14", "Exercise 14: same template fragments", false, new ArrayList()),
-    EXERCISE15("exercise15", "Exercise 15: parameterizable fragments", false, new ArrayList());
+    EXERCISE15("exercise15", "Exercise 15: parameterizable fragments", false, new ArrayList()),
+    EXERCISE16("exercise16", "Exercise 16: literal substitutions", false, Arrays.asList(CUSTOMER_NAME));
 
     private String path;
     private String description;
@@ -117,7 +118,7 @@ public enum Exercise {
 
     public static Exercise[] twoDotOneExercises() {
         Exercise[] twoDotOneExercises = {
-            EXERCISE14, EXERCISE15};
+            EXERCISE14, EXERCISE15, EXERCISE16};
         return twoDotOneExercises;
     }
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial - Exercise 13: inlining</title>
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <p>
+            This exercise introduces three ways of doing String concatenation in Thymeleaf. <br />
+            First, 
+            <a href="http://www.thymeleaf.org/doc/html/Using-Thymeleaf.html#concatenating-texts"
+               title="Open Thymeleaf manual" target="_blank">concatenating</a>
+            from the Using Thymeleaf manual. <br />
+            Second, 
+            <a href="http://www.thymeleaf.org/doc/html/Using-Thymeleaf.html#preprocessing"
+               title="Open Thymeleaf manual" target="_blank">preprocessing</a>
+            from the Using Thymeleaf manual. <br />
+            Third, 
+            <a href="http://www.thymeleaf.org/whatsnew21.html#lsub"
+               title="Open Thymeleaf manual" target="_blank">literal substitutions</a>
+            from the <em>What's new</em> article. <br />
+        </p>
+        <ol>
+            <li>
+			    There is a <kbd>String</kbd> variable with name <b>customerName</b> in the context
+                model that we want to display instead of the text <i>Peter</i> inside the three
+                <kbd>span</kbd> elements.
+            </li>
+            <li>
+                Substitute it using three diferent syntaxes:
+                <ol>
+                    <li>String concatenation</li>
+                    <li>Preprocessing</li>
+                    <li>Literal substitutions</li>
+                </ol>
+            </li>
+            <li>
+                You can check the proposed solution by pressing the <b>Show solution</b> button
+                (<img src="../../../images/lightbulb.png" th:src="@{/images/lightbulb.png}" />) above the code editor.
+            </li>
+        </ol>
+    </body>
+</html>
