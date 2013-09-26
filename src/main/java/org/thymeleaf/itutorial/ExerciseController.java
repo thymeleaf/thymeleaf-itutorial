@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.itutorial.beans.Customer;
+import static org.thymeleaf.itutorial.IndexController.THYMELEAF_VERSION_PARAMETER;
 
 @Controller
 public class ExerciseController {
@@ -36,7 +37,6 @@ public class ExerciseController {
     private static final String CHARSET = "UTF-8";
 
     @Autowired private ServletContext servletContext;
-    @Autowired private String thymeleafVersion;
 
     @RequestMapping(value = "/exercise/{index}", method = RequestMethod.GET)
     public String exercise(@PathVariable("index") final Integer index, final Model model) throws IOException {
@@ -44,7 +44,7 @@ public class ExerciseController {
         String question = new ExerciseResourceLoader(servletContext, exercise).getResource("question.html", CHARSET);
         model.addAttribute("question", question);
         model.addAttribute("exercise", exercise);
-        model.addAttribute("thymeleafVersion", thymeleafVersion);
+        model.addAttribute("thymeleafVersion", servletContext.getInitParameter(THYMELEAF_VERSION_PARAMETER));
         return "exercise.html";
     }
 

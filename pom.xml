@@ -150,33 +150,26 @@
             </plugin>
         
             <plugin>
-                <groupId>com.google.code.maven-replacer-plugin</groupId>
-                <artifactId>maven-replacer-plugin</artifactId>
-                <version>1.4.1</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase> <!-- FIXME: choose a better phase -->
-                        <goals>
-                            <goal>replace</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
                 <configuration>
-                    <includes>
-                        <include>target/thymeleaf-itutorial/WEB-INF/spring-servlet.xml</include>
-                    </includes>
-                    <replacements>
-                        <replacement>
-                            <token>@@THYMELEAF_VERSION@@</token>
-                            <value>${thymeleaf.version}</value>
-                        </replacement>
-                    </replacements>
+                    <webResources>
+                        <resource>
+                            <filtering>true</filtering>
+                            <directory>src/main/webapp</directory>
+                            <includes>
+                                <include>**/web.xml</include>
+                            </includes>
+                        </resource>
+                    </webResources>
+                    <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
                 </configuration>
             </plugin>
         </plugins>
         
     </build>
-
   
     <profiles>
     

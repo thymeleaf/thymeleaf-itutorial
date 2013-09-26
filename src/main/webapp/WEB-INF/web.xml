@@ -29,4 +29,9 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <!-- Thymeleaf version -->
+    <context-param>
+        <param-name>thymeleafVersion</param-name>
+        <param-value>${thymeleaf.version}</param-value>
+    </context-param>
 </web-app>

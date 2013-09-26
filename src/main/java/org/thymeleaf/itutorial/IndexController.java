@@ -19,6 +19,7 @@
  */
 package org.thymeleaf.itutorial;
 
+import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,11 +28,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    @Autowired private String thymeleafVersion;
+    public static final String THYMELEAF_VERSION_PARAMETER = "thymeleafVersion";
+    
+    @Autowired private ServletContext servletContext;
     
     @RequestMapping("/")
     public String index(final Model model) {
-        model.addAttribute("thymeleafVersion", thymeleafVersion);
+        model.addAttribute("thymeleafVersion", servletContext.getInitParameter(THYMELEAF_VERSION_PARAMETER));
         model.addAttribute("basicExercises", Exercise.basicExercises());
         model.addAttribute("twoDotOneExercises", Exercise.twoDotOneExercises());
         return "index.html";

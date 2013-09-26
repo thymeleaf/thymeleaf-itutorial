@@ -48,9 +48,5 @@
         <property name="templateEngine" ref="templateEngine" />
         <property name="characterEncoding" value="UTF-8" />
     </bean>
-    
-    <!-- Thymeleaf Version -->
-    <bean id="thymeleafVersion" class="java.lang.String">
-        <constructor-arg value="@@THYMELEAF_VERSION@@" />
-    </bean>
+
 </beans>
