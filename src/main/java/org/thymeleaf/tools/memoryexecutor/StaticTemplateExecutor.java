@@ -38,11 +38,11 @@ public class StaticTemplateExecutor {
     private final IContext context;
     
     private final IMessageResolver messageResolver;
-
+    
     public StaticTemplateExecutor(final IContext context, final IMessageResolver messageResolver, final String templateMode) {
-        Validate.notNull(context, "Context mode must be non-null");
+        Validate.notNull(context, "Context must be non-null");
         Validate.notNull(templateMode, "Template mode must be non-null");
-        Validate.notNull(messageResolver, "MessageResolver mode must be non-null");
+        Validate.notNull(messageResolver, "MessageResolver must be non-null");
         this.context = context;
         this.templateMode = templateMode;
         this.messageResolver = messageResolver;

@@ -19,15 +19,19 @@
  */
 package org.thymeleaf.itutorial;
 
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.thymeleaf.itutorial.beans.Customer;
 import org.thymeleaf.itutorial.beans.Gender;
 import org.thymeleaf.itutorial.beans.PaymentMethod;
 import org.thymeleaf.itutorial.beans.Product;
+import org.thymeleaf.itutorial.beans.Amount;
 
 /**
  * Mock persistence.
@@ -81,4 +85,20 @@ public class DAO {
         customers.add(new Customer(Integer.valueOf(107), "Rafael", "Garcia", null, PaymentMethod.CREDIT_CARD, 5000));
         return customers;
     }
+
+    public static Amount loadAmount() {
+        BigDecimal amount = new BigDecimal("2599.50");
+        return new Amount(amount);
+    }
+
+    public static Timestamp loadReleaseDate() {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+            Date date = sdf.parse("2014-01-31 15:00");
+            return new Timestamp(date.getTime());
+        } catch (ParseException ex) {
+            throw new RuntimeException("Invalid date");
+        }
+    }
+    
 }

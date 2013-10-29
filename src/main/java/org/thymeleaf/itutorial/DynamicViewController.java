@@ -20,23 +20,27 @@
 package org.thymeleaf.itutorial;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Locale;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.exceptions.TemplateProcessingException;
+import org.thymeleaf.spring3.context.SpringWebContext;
 
 @Controller
 public class DynamicViewController {
     
     @Autowired private ServletContext servletContext;
     @Autowired private MessageSource messageSource;
+    @Autowired private ApplicationContext applicationContext;
 
     @RequestMapping(value = "/dynamicView", method = RequestMethod.POST)
     public void dynamicView(
@@ -52,7 +56,7 @@ public class DynamicViewController {
     private String generateCodeOrError(final HttpServletRequest request, final HttpServletResponse response, 
             final ServletContext servletContext,  final Locale locale, final String code) {
         try {
-            TemplateExecutor templateExecutor = new TemplateExecutor(request, response, servletContext, messageSource, locale);
+            TemplateExecutor templateExecutor = new TemplateExecutor(request, response, servletContext, messageSource, locale, applicationContext);
             return templateExecutor.generateCode(code);
         } catch (TemplateProcessingException ex) {
             return formatErrorMessage(ex);

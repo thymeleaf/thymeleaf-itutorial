@@ -19,15 +19,17 @@
  */
 package org.thymeleaf.itutorial;
 
+import java.util.HashMap;
 import java.util.Locale;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.web.servlet.support.RequestContext;
-import org.thymeleaf.context.WebContext;
 import org.thymeleaf.itutorial.beans.Gender;
 import org.thymeleaf.itutorial.beans.PaymentMethod;
+import org.thymeleaf.spring3.context.SpringWebContext;
 import org.thymeleaf.spring3.messageresolver.SpringMessageResolver;
 import org.thymeleaf.spring3.naming.SpringContextVariableNames;
 import org.thymeleaf.templatemode.StandardTemplateModeHandlers;
@@ -35,12 +37,13 @@ import org.thymeleaf.tools.memoryexecutor.StaticTemplateExecutor;
 
 public class TemplateExecutor {
 
-    private StaticTemplateExecutor executor;
+    private final StaticTemplateExecutor executor;
     
     public TemplateExecutor(
             final HttpServletRequest request, final HttpServletResponse response, 
-            final ServletContext servletContext, final MessageSource messageSource, final Locale locale) {
-        WebContext context = new WebContext(request, response, servletContext);
+            final ServletContext servletContext, final MessageSource messageSource,
+            final Locale locale, final ApplicationContext applicationContext) {
+        SpringWebContext context = new SpringWebContext(request, response, servletContext, locale, new HashMap(), applicationContext);
         RequestContext requestContext = new RequestContext(request, servletContext);
         context.setVariable(SpringContextVariableNames.SPRING_REQUEST_CONTEXT, requestContext); // Necessary to avoid NullPointerException
         context.setLocale(locale);
@@ -52,6 +55,8 @@ public class TemplateExecutor {
         context.setVariable("customerList", DAO.loadAllCustomers());
         context.setVariable("genders", Gender.values());
         context.setVariable("paymentMethods", PaymentMethod.values());
+        context.setVariable("price", DAO.loadAmount());
+        context.setVariable("releaseDate", DAO.loadReleaseDate());
         String templateMode = StandardTemplateModeHandlers.HTML5.getTemplateModeName();
         SpringMessageResolver messageResolver = new SpringMessageResolver();
         messageResolver.setMessageSource(messageSource);

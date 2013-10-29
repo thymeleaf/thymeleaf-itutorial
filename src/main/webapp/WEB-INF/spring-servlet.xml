@@ -10,16 +10,16 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context-3.1.xsd">
         
-	<!-- Use spring servlet for all requests, including static resources -->
+    <!-- Use spring servlet for all requests, including static resources -->
     <mvc:default-servlet-handler />
     
-	<!-- Use @MVC annotations -->
-    <mvc:annotation-driven />
+    <!-- Use @MVC annotations -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
     
-	<!-- User @Controller, @Service... annotations -->
+    <!-- User @Controller, @Service... annotations -->
     <context:component-scan base-package="org.thymeleaf" />
     
-	<!-- Message internalization -->
+    <!-- Message internalization -->
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename" value="messages" />
     </bean>
@@ -48,5 +48,14 @@
         <property name="templateEngine" ref="templateEngine" />
         <property name="characterEncoding" value="UTF-8" />
     </bean>
-
+    
+    <!-- Conversion service -->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="org.thymeleaf.itutorial.beans.AmountFormatter"/>
+                <bean class="org.thymeleaf.itutorial.beans.TimestampFormatter"/>
+            </set>
+        </property>
+    </bean>
 </beans>

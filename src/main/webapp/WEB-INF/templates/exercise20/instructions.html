@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial - Exercise 18: conversion service</title>
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <p>
+            This exercise introduces the
+            <a href="http://www.thymeleaf.org/whatsnew21.html#spconv"
+               title="Open Thymeleaf manual" target="_blank">Spring Conversion Service integration</a>
+            from the <em>What's New</em> article. <br />
+        </p>
+        <ol>
+            <li>
+                Two beans, <b>releaseDate</b> of type
+                <kbd>java.sql.TimeStamp</kbd> and <b>price</b> of type
+                <a href="../../Amount.java"
+                   th:href="'javascript:CODE_DIALOG.show(\'code/Amount.java\')'"
+                   title="See Amount.java source code">Amount</a>
+                have been set into the context.
+            </li>
+            <li>
+                Formatters for these types have also been registered using the Spring Conversion Service.
+            </li>
+            <li>
+                Use the new <kbd>${{..}}</kbd> syntax to format these beans using the Conversion Service.
+            </li>
+            <li>
+                You can check the proposed solution by pressing the <b>Show solution</b> button
+                (<img src="../../../images/lightbulb.png" th:src="@{/images/lightbulb.png}" />) above the code editor.
+            </li>
+        </ol>
+    </body>
+</html>

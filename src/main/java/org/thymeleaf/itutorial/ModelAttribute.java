@@ -31,7 +31,9 @@ public enum ModelAttribute {
     PAYMENT_METHOD("(PaymentMethod.java)", "code/PaymentMethod.java"),
     MESSAGES_EN("(messages_en)", "classes/messages_en.properties"),
     MESSAGES_ES("(messages_es)", "classes/messages_es.properties"),
-    MESSAGES_FR("(messages_fr)", "classes/messages_fr.properties");
+    MESSAGES_FR("(messages_fr)", "classes/messages_fr.properties"),
+    AMOUNT("price", "code/Amount.java"),
+    RELEASE_DATE("releaseDate", null);
 
     private String name;
     private String file;
