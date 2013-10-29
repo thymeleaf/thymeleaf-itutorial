@@ -25,7 +25,7 @@ import org.springframework.format.Formatter;
 
 public class TimestampFormatter implements Formatter<Timestamp> {
 
-    private final String pattern = "EEEE dd of MMMM, yyyy, at HH:mm";
+    private final String pattern = "EEEE dd 'of' MMMM, yyyy, 'at' HH:mm";
 
     @Override
     public String print(final Timestamp time, final Locale locale) {

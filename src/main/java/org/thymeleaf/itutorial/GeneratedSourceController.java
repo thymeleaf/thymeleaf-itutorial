@@ -27,6 +27,7 @@ import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,6 +40,7 @@ public class GeneratedSourceController {
     @Autowired private ServletContext servletContext;
     @Autowired private MessageSource messageSource;
     @Autowired private ApplicationContext applicationContext;
+    @Autowired private ConversionService conversionService;
 
     @RequestMapping(value = "/generatedSource", method = RequestMethod.POST)
     public void generatedSource(
@@ -53,7 +55,7 @@ public class GeneratedSourceController {
     private String generateCodeOrEmpty(final HttpServletRequest request, final HttpServletResponse response,
             final ServletContext servletContext, final Locale locale, final String code) {
         try {
-            TemplateExecutor templateExecutor = new TemplateExecutor(request, response, servletContext, messageSource, locale, applicationContext);
+            TemplateExecutor templateExecutor = new TemplateExecutor(request, response, servletContext, messageSource, locale, applicationContext, conversionService);
             return templateExecutor.generateCode(code);
         } catch (TemplateProcessingException ex) {
             return "";
