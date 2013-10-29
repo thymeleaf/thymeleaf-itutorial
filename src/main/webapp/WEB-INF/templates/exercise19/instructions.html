@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial - Exercise 19: conditional th:remove</title>
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <p>
+            This exercise introduces the
+            <a href="http://www.thymeleaf.org/whatsnew21.html#remove"
+               title="Open Thymeleaf manual" target="_blank">Conditional th:remove</a>
+            from the <em>What's New</em> article. <br />
+        </p>
+        <ol>
+            <li>
+                You have a context variable called <b>customerList</b> containing a <kbd>List</kbd> of 
+                <a href="../../Customer.java"
+                   th:href="'javascript:CODE_DIALOG.show(\'code/Customer.java\')'"
+                   title="See Customer.java source code">Customer</a> objects.
+            </li>
+            <li>
+                The Customer class has a field called <b>personalWebsite</b> which contains the customer
+                personal website URL, or null if the customer does not have a personal website.
+            </li>
+            <li>
+                Use the new conditional <kbd>th:remove</kbd> to add a link to the customer personal website
+                in the displayed first names and last names if the customer has a website. If the customer
+                does not have a website, simply print their first and last names.
+            </li>
+            <li>
+                You can check the proposed solution by pressing the <b>Show solution</b> button
+                (<img src="../../../images/lightbulb.png" th:src="@{/images/lightbulb.png}" />) above the code editor.
+            </li>
+        </ol>
+    </body>
+</html>

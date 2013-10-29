@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial: exercise 19</title>
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Thymeleaf tutorial - Answer for exercise 19: conditional th:remove</h1>
+        <h2>Customer list</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody th:remove="all-but-first">
+                <tr th:each="customer : ${customerList}">
+                    <td th:text="${customer.firstName}">Peter</td>
+                    <td th:text="${customer.lastName}">Jackson</td>
+                    <td th:text="${customer.balance}">350</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="http://mary.blogspot.com/">Mary</a>
+                    </td>
+                    <td>
+                        <a href="http://mary.blogspot.com/">Johanson</a>
+                    </td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>Robert</td>
+                    <td>Allen</td>
+                    <td>50000</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

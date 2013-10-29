@@ -11,6 +11,7 @@ public class Customer {
     private Gender gender;
     private PaymentMethod paymentMethod;
     private int balance;
+    private String personalWebsite;
     
     public Customer() {
         super();
@@ -18,7 +19,8 @@ public class Customer {
 
     public Customer(
             final Integer id, final String firstName, final String lastName, 
-            final Gender gender, final PaymentMethod paymentMethod, final int balance) {
+            final Gender gender, final PaymentMethod paymentMethod,
+            final int balance, final String personalWebsite) {
         super();
         this.id = id;
         this.firstName = firstName;
@@ -26,6 +28,7 @@ public class Customer {
         this.gender = gender;
         this.paymentMethod = paymentMethod;
         this.balance = balance;
+        this.personalWebsite = personalWebsite;
     }
 
     public Integer getId() {
@@ -75,5 +78,12 @@ public class Customer {
     public void setPaymentMethod(final PaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
-    
+
+    public String getPersonalWebsite() {
+        return personalWebsite;
+    }
+
+    public void setPersonalWebsite(String personalWebsite) {
+        this.personalWebsite = personalWebsite;
+    }
 }

@@ -38,6 +38,8 @@ import org.thymeleaf.itutorial.beans.Amount;
  */
 public class DAO {
 
+    private static final String NO_WEBSITE = null;
+    
     public static Product loadProduct() {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -76,13 +78,13 @@ public class DAO {
     
     public static List<Customer> loadAllCustomers() {
         List<Customer> customers = new ArrayList<Customer>();
-        customers.add(new Customer(Integer.valueOf(101), "Peter", "Houston", Gender.MALE, PaymentMethod.CREDIT_CARD, 3000));
-        customers.add(new Customer(Integer.valueOf(102), "Mary", "Johnson", Gender.FEMALE, PaymentMethod.BANK_TRANSFER, 12000));
-        customers.add(new Customer(Integer.valueOf(103), "Andy", "Hoffman", Gender.MALE, PaymentMethod.DIRECT_DEBIT, 35000));
-        customers.add(new Customer(Integer.valueOf(104), "Jane", "Jones", null, PaymentMethod.CREDIT_CARD, 3050));
-        customers.add(new Customer(Integer.valueOf(105), "Owen", "Houston", Gender.MALE, PaymentMethod.BANK_TRANSFER, 1500));
-        customers.add(new Customer(Integer.valueOf(106), "Margaret", "Jackson", Gender.FEMALE, PaymentMethod.DIRECT_DEBIT, 3900));
-        customers.add(new Customer(Integer.valueOf(107), "Rafael", "Garcia", null, PaymentMethod.CREDIT_CARD, 5000));
+        customers.add(new Customer(Integer.valueOf(101), "Peter", "Houston", Gender.MALE, PaymentMethod.CREDIT_CARD, 3000, NO_WEBSITE));
+        customers.add(new Customer(Integer.valueOf(102), "Mary", "Johnson", Gender.FEMALE, PaymentMethod.BANK_TRANSFER, 12000, "http://maryjohnson.blogspot.com/"));
+        customers.add(new Customer(Integer.valueOf(103), "Andy", "Hoffman", Gender.MALE, PaymentMethod.DIRECT_DEBIT, 35000, NO_WEBSITE));
+        customers.add(new Customer(Integer.valueOf(104), "Jane", "Jones", null, PaymentMethod.CREDIT_CARD, 3050, NO_WEBSITE));
+        customers.add(new Customer(Integer.valueOf(105), "Owen", "Houston", Gender.MALE, PaymentMethod.BANK_TRANSFER, 1500, "http://owenhouston.blogspot.com/"));
+        customers.add(new Customer(Integer.valueOf(106), "Margaret", "Jackson", Gender.FEMALE, PaymentMethod.DIRECT_DEBIT, 3900, NO_WEBSITE));
+        customers.add(new Customer(Integer.valueOf(107), "Rafael", "Garcia", null, PaymentMethod.CREDIT_CARD, 5000, "http://rafaelgarcia.blogspot.com/"));
         return customers;
     }
 
