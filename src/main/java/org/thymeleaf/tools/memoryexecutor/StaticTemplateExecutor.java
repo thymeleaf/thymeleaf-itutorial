@@ -19,10 +19,9 @@
  */
 package org.thymeleaf.tools.memoryexecutor;
 
-import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.messageresolver.IMessageResolver;
-import org.thymeleaf.spring3.dialect.SpringStandardDialect;
+import org.thymeleaf.spring3.SpringTemplateEngine;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.util.Validate;
 
@@ -51,9 +50,8 @@ public class StaticTemplateExecutor {
     public String processTemplateCode(final String code) {
         Validate.notNull(code, "Code must be non-null");
         ITemplateResolver templateResolver = new MemoryTemplateResolver(code, templateMode);
-        TemplateEngine templateEngine = new TemplateEngine();
+        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setMessageResolver(messageResolver);
-        templateEngine.addDialect(new SpringStandardDialect());
         templateEngine.setTemplateResolver(templateResolver);
         templateEngine.initialize();
         return templateEngine.process(TEMPLATE_NAME, context);

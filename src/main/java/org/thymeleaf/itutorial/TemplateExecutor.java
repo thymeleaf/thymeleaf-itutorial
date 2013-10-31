@@ -27,7 +27,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.core.convert.ConversionService;
-import org.springframework.web.servlet.support.RequestContext;
 import org.thymeleaf.itutorial.beans.Gender;
 import org.thymeleaf.itutorial.beans.PaymentMethod;
 import org.thymeleaf.spring3.context.SpringWebContext;
@@ -36,7 +35,6 @@ import org.thymeleaf.spring3.messageresolver.SpringMessageResolver;
 import org.thymeleaf.templatemode.StandardTemplateModeHandlers;
 import org.thymeleaf.tools.memoryexecutor.StaticTemplateExecutor;
 import static org.thymeleaf.spring3.expression.ThymeleafEvaluationContext.THYMELEAF_EVALUATION_CONTEXT_CONTEXT_VARIABLE_NAME;
-import static org.thymeleaf.spring3.naming.SpringContextVariableNames.SPRING_REQUEST_CONTEXT;
 
 public class TemplateExecutor {
 
@@ -48,10 +46,7 @@ public class TemplateExecutor {
             final Locale locale, final ApplicationContext applicationContext,
             final ConversionService conversionService) {
         SpringWebContext context = new SpringWebContext(request, response, servletContext, locale, new HashMap(), applicationContext);
-        // Necessary to avoid NullPointerException
-        RequestContext requestContext = new RequestContext(request, servletContext);
-        context.setVariable(SPRING_REQUEST_CONTEXT, requestContext);
-        // Necessary for the ConversionService to work
+//        // Necessary for the ConversionService to work
         ThymeleafEvaluationContext evaluationContext = new ThymeleafEvaluationContext(applicationContext, conversionService);
         context.setVariable(THYMELEAF_EVALUATION_CONTEXT_CONTEXT_VARIABLE_NAME, evaluationContext);
         // Model attributes
