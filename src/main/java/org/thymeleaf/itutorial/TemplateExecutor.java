@@ -27,10 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.core.convert.ConversionService;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.servlet.support.RequestContext;
-import org.thymeleaf.itutorial.beans.Customer;
 import org.thymeleaf.itutorial.beans.Gender;
 import org.thymeleaf.itutorial.beans.PaymentMethod;
 import org.thymeleaf.spring3.context.SpringWebContext;
@@ -51,23 +48,17 @@ public class TemplateExecutor {
             final Locale locale, final ApplicationContext applicationContext,
             final ConversionService conversionService) {
         SpringWebContext context = new SpringWebContext(request, response, servletContext, locale, new HashMap(), applicationContext);
-        // Necessary to avoid NullPointerException in 'exercise 12: forms'
+        // Necessary to avoid NullPointerException
         RequestContext requestContext = new RequestContext(request, response, servletContext, context.getVariables());
         context.setVariable(SPRING_REQUEST_CONTEXT, requestContext);
-        Customer customer = DAO.loadCustomer();
-        String customerVariableName = "customer";
-        WebDataBinder dataBinder = new WebDataBinder(customer, customerVariableName);
-        dataBinder.setConversionService(conversionService);            
-        String bindingResultName = BindingResult.MODEL_KEY_PREFIX + customerVariableName;
-        context.setVariable(customerVariableName, customer);
-        context.setVariable(bindingResultName, dataBinder.getBindingResult());
-        // Necessary for the ConversionService to work//        // Necessary for the ConversionService to work
+        // Necessary for the ConversionService to work
         ThymeleafEvaluationContext evaluationContext = new ThymeleafEvaluationContext(applicationContext, conversionService);
         context.setVariable(THYMELEAF_EVALUATION_CONTEXT_CONTEXT_VARIABLE_NAME, evaluationContext);
         // Model attributes
         context.setVariable("product", DAO.loadProduct());
         context.setVariable("productList", DAO.loadAllProducts());
         context.setVariable("html", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
+        context.setVariable("customer", DAO.loadCustomer());
         context.setVariable("customerName", "Dr. Julius Erwing");
         context.setVariable("customerList", DAO.loadAllCustomers());
         context.setVariable("genders", Gender.values());
