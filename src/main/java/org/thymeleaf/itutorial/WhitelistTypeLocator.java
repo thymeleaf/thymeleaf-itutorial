@@ -35,13 +35,13 @@ public class WhitelistTypeLocator implements TypeLocator {
     }
 
     public Class<?> findType(String typeName) throws EvaluationException {
-        if (notInWhilelist(typeName)) {
+        if (notInWhitelist(typeName)) {
             throw new EvaluationException("Forbidden type: " + typeName);
         }
         return standardTypeLocator.findType(typeName);
     }
 
-    private boolean notInWhilelist(String typeName) {
+    private boolean notInWhitelist(String typeName) {
         return !whitelist.contains(typeName);
     }
 }
