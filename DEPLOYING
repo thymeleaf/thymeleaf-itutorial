@@ -5,6 +5,4 @@ To CloudFoundry:
 	cf push 
 
 To Heroku:
-	heroku login	# only first time
-	heroku create	# only first time
-	heroku push heroku master
+	git push heroku 2.1-master:master
