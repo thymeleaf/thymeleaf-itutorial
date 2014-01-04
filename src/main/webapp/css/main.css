@@ -47,6 +47,8 @@ ul {
     list-style-image: url('../images/bullet.png');
 }
 
+#leftcol p, #rightcol p { margin-left: 1em; }
+
 a.back, a.next {
     display: inline-block;
     margin-top: 2em;

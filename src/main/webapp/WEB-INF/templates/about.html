@@ -10,33 +10,35 @@
             Welcome to the Thymeleaf Interactive Tutorial. Thymeleaf version used in this tutorial is
             <span th:text="${thymeleafVersion}">1.0.0</span>.
         </p>
-        <p>
-            This interactive tutorial has been created by the Thymeleaf Team using great open source
-            tools like:
-        </p>
-        <ul>
-            <li><a href="http://ace.c9.io" target="_blank">ACE web editor</a></li>
-            <li><a href="http://dwabyick.github.io/Source-Code-Pro/" target="_blank">Adobe Source Code Pro font</a></li>
-            <li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
-            <li><a href="http://www.springsource.org/spring-framework" target="_blank">Spring Framework</a></li>
-        </ul>
-        <p>
-            This tutorial is gracefully hosted at the
-            <a href="https://www.heroku.com/" target="_blank">Heroku Cloud Platform</a>
-        </p>
-        <p>
-            Icons used in this app, except Thymeleaf logo, are created by
-            <a href="http://www.famfamfam.com/lab/icons/silk/" target="_blank">Mark James</a>
-        </p>
-        <p>
-            You can get the source code of this tutorial at
-            <a href="https://github.com/thymeleaf/thymeleaf-itutorial" target="_blank">GitHub</a>.
-        </p>
-        <p>
-            You can find much more documentation on Thymeleaf at the
-            <a href="http://www.thymeleaf.org">Thymeleaf website</a>.
-        </p>
-        <p>For any questions or help, you can use the <a href="http://forum.thymeleaf.org/">user forum</a>.</p>
-        <h3 class="footer">Copyright &copy; 2013 The Thymeleaf Team</h3>
+        <div th:fragment="main-content">
+            <p>
+                This interactive tutorial has been created by the Thymeleaf Team using great open source
+                tools like:
+            </p>
+            <ul>
+                <li><a href="http://ace.c9.io" target="_blank">ACE web editor</a></li>
+                <li><a href="http://dwabyick.github.io/Source-Code-Pro/" target="_blank">Adobe Source Code Pro font</a></li>
+                <li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
+                <li><a href="http://www.springsource.org/spring-framework" target="_blank">Spring Framework</a></li>
+            </ul>
+            <p>
+                This tutorial is gracefully hosted at the
+                <a href="https://www.heroku.com/" target="_blank">Heroku Cloud Platform</a>
+            </p>
+            <p>
+                Icons used in this app, except Thymeleaf logo, are created by
+                <a href="http://www.famfamfam.com/lab/icons/silk/" target="_blank">Mark James</a>
+            </p>
+            <p>
+                You can get the source code of this tutorial at
+                <a href="https://github.com/thymeleaf/thymeleaf-itutorial" target="_blank">GitHub</a>.
+            </p>
+            <p>
+                You can find much more documentation on Thymeleaf at the
+                <a href="http://www.thymeleaf.org">Thymeleaf website</a>.
+            </p>
+            <p>For any questions or help, you can use the <a href="http://forum.thymeleaf.org/">user forum</a>.</p>
+        </div>
+        <h3 class="footer">Copyright &copy; 2014 The Thymeleaf Team</h3>
     </body>
 </html>

@@ -56,6 +56,8 @@
                     A big screen is also recommended.
                 </li>
             </ul>
+            <h2>About</h2>
+            <div th:replace="about.html :: main-content"></div>
         </div>
         <div id="rightcol">
             <h2>Table of contents</h2>
@@ -76,17 +78,9 @@
                        th:text="${exercise.description}">Exercise 1: bean values</a>
                 </li>
             </ul>
-            <h2>Further resources</h2>
-            <p>
-                You can find much more documentation on Thymeleaf at the
-                <a href="http://www.thymeleaf.org">Thymeleaf website</a>.
-            </p>
-            <p>
-                For any questions or help, you can use the <a href="http://forum.thymeleaf.org/">user forum</a>.
-            </p>
         </div>
         <footer>
-            <h3 class="footer">Copyright &copy; 2013 The Thymeleaf Team</h3>
+            <h3 class="footer">Copyright &copy; 2014 The Thymeleaf Team</h3>
         </footer>
     </body>
 </html>
