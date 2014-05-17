@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf tutorial - Exercise 21: template uri variables</title>
+        <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{/css/main.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <p>
+            This exercise shows the syntax for the template URI variables as requested at
+            <a href="https://github.com/thymeleaf/thymeleaf/issues/89"
+               title="Open Thymeleaf issue" target="_blank">URL with path variable</a>
+            ticket.
+        </p>
+        <p>
+            This syntax is handy for the construction of REST-style URLs.
+        </p>
+        <ol>
+            <li>
+                Two beans, <b>productId</b> and <b>productName</b> have been set into the context.
+            </li>
+            <li>
+                Use the path variable syntax to build a URL containing this parameters in the form of:
+                <kbd>http://itutorial.thymeleaf.org/buy/273/Red-carpet.html</kbd>
+            </li>
+            <li>
+                You can check the proposed solution by pressing the <b>Show solution</b> button
+                (<img src="../../../images/lightbulb.png" th:src="@{/images/lightbulb.png}" />) above the code editor.
+            </li>
+        </ol>
+    </body>
+</html>

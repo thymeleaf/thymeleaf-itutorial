@@ -1,20 +1,20 @@
 /*
  * =============================================================================
- * 
+ *
  *   Copyright (c) 2011-2013, The THYMELEAF team (http://www.thymeleaf.org)
- * 
+ *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
  *   You may obtain a copy of the License at
- * 
+ *
  *       http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  *   Unless required by applicable law or agreed to in writing, software
  *   distributed under the License is distributed on an "AS IS" BASIS,
  *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
- * 
+ *
  * =============================================================================
  */
 package org.thymeleaf.itutorial;
@@ -25,7 +25,7 @@ import java.util.List;
 import static org.thymeleaf.itutorial.ModelAttribute.*;
 
 public enum Exercise {
-    
+
     EXERCISE01("exercise01", "Exercise 1: bean values", false, Arrays.asList(PRODUCT)),
     EXERCISE02("exercise02", "Exercise 2: simple formatting", false, Arrays.asList(PRODUCT)),
     EXERCISE03("exercise03", "Exercise 3: string concatenation", false, Arrays.asList(PRODUCT)),
@@ -45,12 +45,13 @@ public enum Exercise {
     EXERCISE17("exercise17", "Exercise 17: comments", false, new ArrayList()),
     EXERCISE18("exercise18", "Exercise 18: data-* syntax", false, new ArrayList()),
     EXERCISE19("exercise19", "Exercise 19: conditional th:remove", false, Arrays.asList(CUSTOMER_LIST)),
-    EXERCISE20("exercise20", "Exercise 20: conversion service", false, Arrays.asList(AMOUNT, RELEASE_DATE));
+    EXERCISE20("exercise20", "Exercise 20: conversion service", false, Arrays.asList(AMOUNT, RELEASE_DATE)),
+    EXERCISE21("exercise21", "Exercise 21: template uri variables", false, Arrays.asList(PRODUCT_ID, PRODUCT_NAME));
 
-    private String path;
-    private String description;
-    private boolean i18nExercise;
-    private List<ModelAttribute> attributes;
+    private final String path;
+    private final String description;
+    private final boolean i18nExercise;
+    private final List<ModelAttribute> attributes;
 
     private Exercise(final String path, final String description, final boolean i18nExercise,
             final List<ModelAttribute> attributes) {
@@ -85,7 +86,7 @@ public enum Exercise {
     public List<ModelAttribute> getAttributes() {
         return attributes;
     }
-    
+
     public boolean hasAttributes() {
         return attributes != null && !attributes.isEmpty();
     }
@@ -112,7 +113,7 @@ public enum Exercise {
         }
         return null;
     }
-    
+
     public static Exercise[] basicExercises() {
         Exercise[] basicExercises = {
             EXERCISE01, EXERCISE02, EXERCISE03, EXERCISE04, EXERCISE05, EXERCISE06, EXERCISE07,
@@ -122,7 +123,8 @@ public enum Exercise {
 
     public static Exercise[] twoDotOneExercises() {
         Exercise[] twoDotOneExercises = {
-            EXERCISE14, EXERCISE15, EXERCISE16, EXERCISE17, EXERCISE18, EXERCISE19, EXERCISE20};
+            EXERCISE14, EXERCISE15, EXERCISE16, EXERCISE17, EXERCISE18, EXERCISE19, EXERCISE20,
+            EXERCISE21};
         return twoDotOneExercises;
     }
 }
