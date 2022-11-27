@@ -1,4 +1,4 @@
 To Heroku:
 	heroku login
 	heroku git:remote -a thymeleaf-itutorial
-	git push heroku 2.1-master:main
+	git push heroku 2.1-master:master
